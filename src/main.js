@@ -8,6 +8,6 @@ const UCC_API = 'https://api.unchainedcarrot.com/v1'
  * @function
  * @param {object} newReferralMember - New Referral Member.
  */
-export const createNewReferralMember = (newReferralMember) => {
-  return axios.post(UCC_API + '/rfbm/members');
+export function createNewReferralMember(newReferralMember) {
+  return axios.post(UCC_API + '/rfbm/members', newReferralMember);
 }

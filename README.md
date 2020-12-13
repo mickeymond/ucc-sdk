@@ -8,15 +8,17 @@ For Browser
 ```
 <script src="https://unpkg.com/axios"></script>
 <script src="https://unpkg.com/ucc-sdk"></script>
-<script>
-	// Access All Methods on the Global uccSdk
-	uccSdk.any();
-</script>
+
+// Access All Methods on the Global uccSdk
+uccSdk.any();
 ```
 
 For Node or Webpack
 
 ```
+npm install ucc-sdk
+yarn add ucc-sdk
+
 const uccSdk = require('ucc-sdk');
 import * as uccSdk from 'ucc-sdk';
 

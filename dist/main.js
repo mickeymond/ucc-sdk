@@ -24,8 +24,8 @@ const UCC_API = 'https://api.unchainedcarrot.com/v1'
  * @function
  * @param {object} newReferralMember - New Referral Member.
  */
-const createNewReferralMember = (newReferralMember) => {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default().post(UCC_API + '/rfbm/members');
+function createNewReferralMember(newReferralMember) {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default().post(UCC_API + '/rfbm/members', newReferralMember);
 }
 
 /***/ }),
