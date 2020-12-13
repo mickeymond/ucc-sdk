@@ -1,0 +1,19 @@
+{
+  "name": "ucc-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack",
+    "docs": "jsdoc2md src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.21.0",
+    "jsdoc-to-markdown": "^6.0.1",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0"
+  }
+}
