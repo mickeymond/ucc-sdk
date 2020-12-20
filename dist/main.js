@@ -1,2 +1,0 @@
-var uccSdk;uccSdk=(self.webpackChunkuccSdk=self.webpackChunkuccSdk||[]).push([[179],{473:(c,e,r)=>{"use strict";r.r(e),r.d(e,{createNewReferralMember:()=>a});var u=r.n(void 0);function a(c){return u().post("https://api.unchainedcarrot.com/v1/rfbm/members",c)}}},0,[[473,303]]]);
-//# sourceMappingURL=main.js.map
