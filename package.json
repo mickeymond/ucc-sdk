@@ -1,13 +1,17 @@
 {
   "name": "ucc-sdk",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "UnchainedCarrot SDK",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "rollup --config",
     "docs": "jsdoc2md src/main.js"
   },
-  "keywords": ["ucc-sdk", "ucc", "sdk"],
+  "keywords": [
+    "ucc-sdk",
+    "ucc",
+    "sdk"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/mickeymond/ucc-sdk.git"
