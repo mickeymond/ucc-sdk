@@ -1,3 +1,7 @@
 const uccSdk = require('ucc-sdk');
 
-console.log(uccSdk);
+uccSdk.createNewReferralMember({}).then(result => {
+  console.log(result);
+}).catch(error => {
+  console.log(error.response.data);
+})

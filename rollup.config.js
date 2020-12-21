@@ -3,7 +3,11 @@ export default {
   output: {
     file: 'dist/bundle.js',
     format: 'umd',
-    name: 'uccSdk'
+    name: 'uccSdk',
+    globals: {
+      'axios': 'axios'
+    }
   },
+  external: [ 'axios' ],
   // plugins: [ resolve() ]
 };
