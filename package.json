@@ -1,15 +1,26 @@
 {
   "name": "ucc-sdk",
   "version": "1.6.0",
-  "description": "",
+  "description": "UnchainedCarrot SDK",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "rollup --config",
     "docs": "jsdoc2md src/main.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["ucc-sdk", "ucc", "sdk"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mickeymond/ucc-sdk.git"
+  },
+  "author": {
+    "name": "Michael Hammond",
+    "email": "mickeymond@gmail.com"
+  },
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickeymond/ucc-sdk/issues"
+  },
+  "homepage": "https://github.com/mickeymond/ucc-sdk",
   "devDependencies": {
     "axios": "^0.21.0",
     "jsdoc-to-markdown": "^6.0.1",
