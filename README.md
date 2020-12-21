@@ -32,7 +32,7 @@ Usage
 ## Functions
 
 <dl>
-<dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a></dt>
+<dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
 <dd><p>Create A New Referral Member.</p>
 </dd>
 </dl>
@@ -46,14 +46,18 @@ Usage
 <dt><a href="#NewReferralMember">NewReferralMember</a> : <code>Object</code></dt>
 <dd><p>New Referral Member Type.</p>
 </dd>
+<dt><a href="#MemberSummary">MemberSummary</a> : <code>Object</code></dt>
+<dd><p>Referral Member Summary Type.</p>
+</dd>
 </dl>
 
 <a name="createNewReferralMember"></a>
 
-## createNewReferralMember(newReferralMember)
+## createNewReferralMember(newReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
 Create A New Referral Member.
 
 **Kind**: global function
+**Returns**: [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary) - New Referral Result
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -91,3 +95,18 @@ New Referral Member Type.
 | associatedAccount | [<code>AssociatedAccount</code>](#AssociatedAccount) | Indicates whether the associatedAccount component is present. |
 | referralCode | <code>string</code> | Indicates whether the referralCode component is present. |
 | referralProgramId | <code>string</code> | Indicates whether the referralProgramId component is present. |
+
+<a name="MemberSummary"></a>
+
+## MemberSummary : <code>Object</code>
+Referral Member Summary Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| userProfileId | <code>string</code> | Indicates whether the userProfileId component is present. |
+| auth0Id | <code>string</code> | Indicates whether the auth0Id component is present. |
+| memberId | <code>string</code> | Indicates whether the memberId component is present. |
+| referralLink | <code>string</code> | Indicates whether the referralLink component is present. |
