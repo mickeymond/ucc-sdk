@@ -5,7 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "build": "rollup --config",
-    "docs": "jsdoc2md src/main.js"
+    "docs": "jsdoc2md src/**.js"
   },
   "keywords": [
     "ucc-sdk",

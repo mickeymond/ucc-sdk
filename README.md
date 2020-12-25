@@ -35,6 +35,9 @@ Usage
 <dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
 <dd><p>Create A New Referral Member.</p>
 </dd>
+<dt><a href="#webTracker">webTracker(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
+<dd><p>Send UCC Web Tracking Event.</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -62,6 +65,22 @@ Create A New Referral Member.
 | Param | Type | Description |
 | --- | --- | --- |
 | newReferralMember | [<code>NewReferralMember</code>](#NewReferralMember) | New Referral Member. |
+
+<a name="webTracker"></a>
+
+## webTracker(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>
+Send UCC Web Tracking Event.
+
+**Kind**: global function
+**Returns**: <code>Promise.&lt;any&gt;</code> - Web Tracking Response
+
+| Param | Type | Description |
+| --- | --- | --- |
+| customerId | <code>string</code> | UCC Customer ID. |
+| projectId | <code>string</code> | UCC Project/Source ID. |
+| event | <code>string</code> | Event Name - Find out from Project Manager. |
+| data | <code>object</code> | Event Data - Find out from Project Manager. |
+| user | <code>object</code> | User Data If Applicable. |
 
 <a name="AssociatedAccount"></a>
 
