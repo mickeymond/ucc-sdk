@@ -35,7 +35,10 @@ Usage
 <dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
 <dd><p>Create A New Referral Member.</p>
 </dd>
-<dt><a href="#webTracker">webTracker(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
+<dt><a href="#findReferralProgramMember">findReferralProgramMember(programId, application, userId)</a> ⇒ <code>Promise.&lt;(ReferralProgramMember|undefined)&gt;</code></dt>
+<dd><p>Find Referral Program Member.</p>
+</dd>
+<dt><a href="#submitEvent">submitEvent(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
 <dd><p>Send UCC Web Tracking Event.</p>
 </dd>
 </dl>
@@ -52,6 +55,15 @@ Usage
 <dt><a href="#MemberSummary">MemberSummary</a> : <code>Object</code></dt>
 <dd><p>Referral Member Summary Type.</p>
 </dd>
+<dt><a href="#PayoutSettings">PayoutSettings</a> : <code>Object</code></dt>
+<dd><p>Payout Settings Type.</p>
+</dd>
+<dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
+<dd><p>Payout Settings Type.</p>
+</dd>
+<dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
+<dd><p>Referral Member Type.</p>
+</dd>
 </dl>
 
 <a name="createNewReferralMember"></a>
@@ -66,9 +78,23 @@ Create A New Referral Member.
 | --- | --- | --- |
 | newReferralMember | [<code>NewReferralMember</code>](#NewReferralMember) | New Referral Member. |
 
-<a name="webTracker"></a>
+<a name="findReferralProgramMember"></a>
 
-## webTracker(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>
+## findReferralProgramMember(programId, application, userId) ⇒ <code>Promise.&lt;(ReferralProgramMember\|undefined)&gt;</code>
+Find Referral Program Member.
+
+**Kind**: global function
+**Returns**: <code>Promise.&lt;(ReferralProgramMember\|undefined)&gt;</code> - Get Referral Program Member Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| programId | <code>string</code> | Referral Program Id. |
+| application | <code>string</code> | Application / External System. |
+| userId | <code>string</code> | Referral Program User Id. |
+
+<a name="submitEvent"></a>
+
+## submitEvent(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>
 Send UCC Web Tracking Event.
 
 **Kind**: global function
@@ -129,3 +155,47 @@ Referral Member Summary Type.
 | auth0Id | <code>string</code> | Indicates whether the auth0Id component is present. |
 | memberId | <code>string</code> | Indicates whether the memberId component is present. |
 | referralLink | <code>string</code> | Indicates whether the referralLink component is present. |
+
+<a name="PayoutSettings"></a>
+
+## PayoutSettings : <code>Object</code>
+Payout Settings Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| blockchain | <code>string</code> | Indicates whether the blockchain component is present. |
+| address | <code>string</code> | Indicates whether the address component is present. |
+
+<a name="SocialMediaProfiles"></a>
+
+## SocialMediaProfiles : <code>Object</code>
+Payout Settings Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| username | <code>string</code> | Indicates whether the username component is present. |
+| provider | <code>string</code> | Indicates whether the provider component is present. |
+
+<a name="ReferralProgramMember"></a>
+
+## ReferralProgramMember : <code>Object</code>
+Referral Member Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | Indicates whether the firstName component is present. |
+| lastName | <code>string</code> | Indicates whether the lastName component is present. |
+| phone | <code>string</code> | Indicates whether the phone component is present. |
+| country | <code>string</code> | Indicates whether the country component is present. |
+| payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | Indicates whether the payoutSettings component is present. |
+| socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | Indicates whether the socialMediaProfiles component is present. |
+| email | <code>string</code> | Indicates whether the email component is present. |
