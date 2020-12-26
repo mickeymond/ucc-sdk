@@ -3,31 +3,31 @@ import axios from 'axios';
 /**
  * Associated Account Type.
  * @typedef {Object} AssociatedAccount
- * @property {string} application - Indicates whether the application component is present.
- * @property {string} userId - Indicates whether the userId component is present.
+ * @property {string} application - ucc application or external system.
+ * @property {string} userId - ucc userId.
  */
 
 /**
  * New Referral Member Type.
  * @typedef {Object} NewReferralMember
- * @property {string} firstName - Indicates whether the firstName component is present.
- * @property {string} lastName - Indicates whether the lastName component is present.
- * @property {string} email - Indicates whether the email component is present.
- * @property {string} phone - Indicates whether the phone component is present.
- * @property {string} country - Indicates whether the country component is present.
- * @property {string} password - Indicates whether the password component is present.
- * @property {AssociatedAccount} associatedAccount - Indicates whether the associatedAccount component is present.
- * @property {string} referralCode - Indicates whether the referralCode component is present.
- * @property {string} referralProgramId - Indicates whether the referralProgramId component is present.
+ * @property {string} firstName - firstName.
+ * @property {string} lastName - lastName.
+ * @property {string} email - email.
+ * @property {string} phone - phone.
+ * @property {string} country - country.
+ * @property {string} password - password.
+ * @property {AssociatedAccount} associatedAccount - associatedAccount.
+ * @property {string} referralCode - referralCode.
+ * @property {string} referralProgramId - referralProgramId.
  */
 
 /**
  * Referral Member Summary Type.
  * @typedef {Object} MemberSummary
- * @property {string} userProfileId - Indicates whether the userProfileId component is present.
- * @property {string} auth0Id - Indicates whether the auth0Id component is present.
- * @property {string} memberId - Indicates whether the memberId component is present.
- * @property {string} referralLink - Indicates whether the referralLink component is present.
+ * @property {string} userProfileId - userProfileId.
+ * @property {string} auth0Id - auth0Id.
+ * @property {string} memberId - memberId.
+ * @property {string} referralLink - referralLink.
  */
 
 /**

@@ -11,31 +11,31 @@
   /**
    * Associated Account Type.
    * @typedef {Object} AssociatedAccount
-   * @property {string} application - Indicates whether the application component is present.
-   * @property {string} userId - Indicates whether the userId component is present.
+   * @property {string} application - ucc application or external system.
+   * @property {string} userId - ucc userId.
    */
 
   /**
    * New Referral Member Type.
    * @typedef {Object} NewReferralMember
-   * @property {string} firstName - Indicates whether the firstName component is present.
-   * @property {string} lastName - Indicates whether the lastName component is present.
-   * @property {string} email - Indicates whether the email component is present.
-   * @property {string} phone - Indicates whether the phone component is present.
-   * @property {string} country - Indicates whether the country component is present.
-   * @property {string} password - Indicates whether the password component is present.
-   * @property {AssociatedAccount} associatedAccount - Indicates whether the associatedAccount component is present.
-   * @property {string} referralCode - Indicates whether the referralCode component is present.
-   * @property {string} referralProgramId - Indicates whether the referralProgramId component is present.
+   * @property {string} firstName - firstName.
+   * @property {string} lastName - lastName.
+   * @property {string} email - email.
+   * @property {string} phone - phone.
+   * @property {string} country - country.
+   * @property {string} password - password.
+   * @property {AssociatedAccount} associatedAccount - associatedAccount.
+   * @property {string} referralCode - referralCode.
+   * @property {string} referralProgramId - referralProgramId.
    */
 
   /**
    * Referral Member Summary Type.
    * @typedef {Object} MemberSummary
-   * @property {string} userProfileId - Indicates whether the userProfileId component is present.
-   * @property {string} auth0Id - Indicates whether the auth0Id component is present.
-   * @property {string} memberId - Indicates whether the memberId component is present.
-   * @property {string} referralLink - Indicates whether the referralLink component is present.
+   * @property {string} userProfileId - userProfileId.
+   * @property {string} auth0Id - auth0Id.
+   * @property {string} memberId - memberId.
+   * @property {string} referralLink - referralLink.
    */
 
   /**
@@ -85,34 +85,34 @@
   /**
    * Payout Settings Type.
    * @typedef {Object} PayoutSettings
-   * @property {string} blockchain - Indicates whether the blockchain component is present.
-   * @property {string} address - Indicates whether the address component is present.
+   * @property {string} blockchain - blockchain.
+   * @property {string} address - address.
    */
 
   /**
    * Payout Settings Type.
    * @typedef {Object} SocialMediaProfiles
-   * @property {string} username - Indicates whether the username component is present.
-   * @property {string} provider - Indicates whether the provider component is present.
+   * @property {string} username - username.
+   * @property {string} provider - provider.
    */
 
   /**
    * Referral Member Type.
    * @typedef {Object} ReferralProgramMember
-   * @property {string} firstName - Indicates whether the firstName component is present.
-   * @property {string} lastName - Indicates whether the lastName component is present.
-   * @property {string} phone - Indicates whether the phone component is present.
-   * @property {string} country - Indicates whether the country component is present.
-   * @property {Array<PayoutSettings>} payoutSettings - Indicates whether the payoutSettings component is present.
-   * @property {Array<SocialMediaProfiles>} socialMediaProfiles - Indicates whether the socialMediaProfiles component is present.
-   * @property {string} email - Indicates whether the email component is present.
+   * @property {string} firstName - firstName.
+   * @property {string} lastName - lastName.
+   * @property {string} phone - phone.
+   * @property {string} country - country.
+   * @property {Array<PayoutSettings>} payoutSettings - payoutSettings.
+   * @property {Array<SocialMediaProfiles>} socialMediaProfiles - socialMediaProfiles.
+   * @property {string} email - email.
    */
 
   /**
    * Find Referral Program Member.
    * @function
    * @param {string} programId - Referral Program Id.
-   * @param {string} application - Application / External System.
+   * @param {string} application - Application or External System.
    * @param {string} userId - Referral Program User Id.
    * @returns {Promise<ReferralProgramMember | undefined>} Get Referral Program Member Result
    */

@@ -107,7 +107,7 @@ Find Referral Program Member.
 | Param | Type | Description |
 | --- | --- | --- |
 | programId | <code>string</code> | Referral Program Id. |
-| application | <code>string</code> | Application / External System. |
+| application | <code>string</code> | Application or External System. |
 | userId | <code>string</code> | Referral Program User Id. |
 
 <a name="getMemberReferralStatistics"></a>
@@ -149,8 +149,8 @@ Associated Account Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| application | <code>string</code> | Indicates whether the application component is present. |
-| userId | <code>string</code> | Indicates whether the userId component is present. |
+| application | <code>string</code> | ucc application or external system. |
+| userId | <code>string</code> | ucc userId. |
 
 <a name="NewReferralMember"></a>
 
@@ -162,15 +162,15 @@ New Referral Member Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| firstName | <code>string</code> | Indicates whether the firstName component is present. |
-| lastName | <code>string</code> | Indicates whether the lastName component is present. |
-| email | <code>string</code> | Indicates whether the email component is present. |
-| phone | <code>string</code> | Indicates whether the phone component is present. |
-| country | <code>string</code> | Indicates whether the country component is present. |
-| password | <code>string</code> | Indicates whether the password component is present. |
-| associatedAccount | [<code>AssociatedAccount</code>](#AssociatedAccount) | Indicates whether the associatedAccount component is present. |
-| referralCode | <code>string</code> | Indicates whether the referralCode component is present. |
-| referralProgramId | <code>string</code> | Indicates whether the referralProgramId component is present. |
+| firstName | <code>string</code> | firstName. |
+| lastName | <code>string</code> | lastName. |
+| email | <code>string</code> | email. |
+| phone | <code>string</code> | phone. |
+| country | <code>string</code> | country. |
+| password | <code>string</code> | password. |
+| associatedAccount | [<code>AssociatedAccount</code>](#AssociatedAccount) | associatedAccount. |
+| referralCode | <code>string</code> | referralCode. |
+| referralProgramId | <code>string</code> | referralProgramId. |
 
 <a name="MemberSummary"></a>
 
@@ -182,10 +182,10 @@ Referral Member Summary Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| userProfileId | <code>string</code> | Indicates whether the userProfileId component is present. |
-| auth0Id | <code>string</code> | Indicates whether the auth0Id component is present. |
-| memberId | <code>string</code> | Indicates whether the memberId component is present. |
-| referralLink | <code>string</code> | Indicates whether the referralLink component is present. |
+| userProfileId | <code>string</code> | userProfileId. |
+| auth0Id | <code>string</code> | auth0Id. |
+| memberId | <code>string</code> | memberId. |
+| referralLink | <code>string</code> | referralLink. |
 
 <a name="PayoutSettings"></a>
 
@@ -197,8 +197,8 @@ Payout Settings Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| blockchain | <code>string</code> | Indicates whether the blockchain component is present. |
-| address | <code>string</code> | Indicates whether the address component is present. |
+| blockchain | <code>string</code> | blockchain. |
+| address | <code>string</code> | address. |
 
 <a name="SocialMediaProfiles"></a>
 
@@ -210,8 +210,8 @@ Payout Settings Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| username | <code>string</code> | Indicates whether the username component is present. |
-| provider | <code>string</code> | Indicates whether the provider component is present. |
+| username | <code>string</code> | username. |
+| provider | <code>string</code> | provider. |
 
 <a name="ReferralProgramMember"></a>
 
@@ -223,10 +223,10 @@ Referral Member Type.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| firstName | <code>string</code> | Indicates whether the firstName component is present. |
-| lastName | <code>string</code> | Indicates whether the lastName component is present. |
-| phone | <code>string</code> | Indicates whether the phone component is present. |
-| country | <code>string</code> | Indicates whether the country component is present. |
-| payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | Indicates whether the payoutSettings component is present. |
-| socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | Indicates whether the socialMediaProfiles component is present. |
-| email | <code>string</code> | Indicates whether the email component is present. |
+| firstName | <code>string</code> | firstName. |
+| lastName | <code>string</code> | lastName. |
+| phone | <code>string</code> | phone. |
+| country | <code>string</code> | country. |
+| payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | payoutSettings. |
+| socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMediaProfiles. |
+| email | <code>string</code> | email. |
