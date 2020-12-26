@@ -8,6 +8,6 @@ import axios from 'axios';
  */
 export async function confirmReferral(referralId) {
   const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/confirm`;
-  const response = await axios.get(ENDPOINT);
+  const response = await axios.patch(ENDPOINT);
   return response.data;
 }

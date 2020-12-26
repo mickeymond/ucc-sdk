@@ -41,6 +41,9 @@ Usage
 <dt><a href="#findReferralProgramMember">findReferralProgramMember(programId, application, userId)</a> ⇒ <code>Promise.&lt;(ReferralProgramMember|undefined)&gt;</code></dt>
 <dd><p>Find Referral Program Member.</p>
 </dd>
+<dt><a href="#getMemberReferralStatistics">getMemberReferralStatistics(programId, memberId)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
+<dd><p>Get Member Referral Statistics</p>
+</dd>
 <dt><a href="#submitEvent">submitEvent(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
 <dd><p>Send UCC Web Tracking Event.</p>
 </dd>
@@ -106,6 +109,19 @@ Find Referral Program Member.
 | programId | <code>string</code> | Referral Program Id. |
 | application | <code>string</code> | Application / External System. |
 | userId | <code>string</code> | Referral Program User Id. |
+
+<a name="getMemberReferralStatistics"></a>
+
+## getMemberReferralStatistics(programId, memberId) ⇒ <code>Promise.&lt;any&gt;</code>
+Get Member Referral Statistics
+
+**Kind**: global function
+**Returns**: <code>Promise.&lt;any&gt;</code> - Get Member Referral Statistics Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| programId | <code>string</code> | Referral Program Id. |
+| memberId | <code>string</code> | Referral Program Member Id. |
 
 <a name="submitEvent"></a>
 
