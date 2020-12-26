@@ -32,6 +32,9 @@ Usage
 ## Functions
 
 <dl>
+<dt><a href="#confirmReferral">confirmReferral(referralId)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
+<dd><p>Find Referral Program Member.</p>
+</dd>
 <dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
 <dd><p>Create A New Referral Member.</p>
 </dd>
@@ -65,6 +68,18 @@ Usage
 <dd><p>Referral Member Type.</p>
 </dd>
 </dl>
+
+<a name="confirmReferral"></a>
+
+## confirmReferral(referralId) ⇒ <code>Promise.&lt;any&gt;</code>
+Find Referral Program Member.
+
+**Kind**: global function
+**Returns**: <code>Promise.&lt;any&gt;</code> - Get Referral Program Member Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| referralId | <code>string</code> | Referral Id. |
 
 <a name="createNewReferralMember"></a>
 

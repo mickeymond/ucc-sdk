@@ -26,10 +26,12 @@
   },
   "homepage": "https://github.com/mickeymond/ucc-sdk",
   "devDependencies": {
-    "axios": "^0.21.0",
     "jsdoc-to-markdown": "^6.0.1",
     "rollup": "^2.35.1"
   },
   "jsdelivr": "dist/bundle.js",
-  "unpkg": "dist/bundle.js"
+  "unpkg": "dist/bundle.js",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }

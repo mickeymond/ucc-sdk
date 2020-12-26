@@ -122,6 +122,19 @@
     return response.data;
   }
 
+  /**
+   * Find Referral Program Member.
+   * @function
+   * @param {string} referralId - Referral Id.
+   * @returns {Promise<any>} Get Referral Program Member Result
+   */
+  async function confirmReferral(referralId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/confirm`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  exports.confirmReferral = confirmReferral;
   exports.createNewReferralMember = createNewReferralMember;
   exports.findReferralProgramMember = findReferralProgramMember;
   exports.submitEvent = submitEvent;
