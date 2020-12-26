@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 /**
- * Find Referral Program Member.
+ * Confirm Referral.
  * @function
  * @param {string} referralId - Referral Id.
- * @returns {Promise<any>} Get Referral Program Member Result
+ * @returns {Promise<any>} Confirm Referral Result
  */
 export async function confirmReferral(referralId) {
   const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/confirm`;

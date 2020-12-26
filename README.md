@@ -33,7 +33,7 @@ Usage
 
 <dl>
 <dt><a href="#confirmReferral">confirmReferral(referralId)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
-<dd><p>Find Referral Program Member.</p>
+<dd><p>Confirm Referral.</p>
 </dd>
 <dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
 <dd><p>Create A New Referral Member.</p>
@@ -72,10 +72,10 @@ Usage
 <a name="confirmReferral"></a>
 
 ## confirmReferral(referralId) ⇒ <code>Promise.&lt;any&gt;</code>
-Find Referral Program Member.
+Confirm Referral.
 
 **Kind**: global function
-**Returns**: <code>Promise.&lt;any&gt;</code> - Get Referral Program Member Result
+**Returns**: <code>Promise.&lt;any&gt;</code> - Confirm Referral Result
 
 | Param | Type | Description |
 | --- | --- | --- |
