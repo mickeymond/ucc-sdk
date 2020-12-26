@@ -1,6 +1,6 @@
 {
   "name": "ucc-sdk",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "UnchainedCarrot SDK",
   "main": "dist/bundle.js",
   "scripts": {
