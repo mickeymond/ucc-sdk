@@ -171,7 +171,7 @@
    * @returns {Promise<ReferralDetails>} Get Referral Details Result
    */
   async function getReferralDetails(referralId) {
-    const ENDPOINT = `https://api.unchainedcarrot.com/v1​/rfbm​/referrals​/${referralId}`;
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}`;
     const response = await axios__default['default'].get(ENDPOINT);
     return response.data;
   }
