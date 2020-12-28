@@ -29,21 +29,16 @@ uccSdk.any();
 Usage
 -----
 
+## Objects
+
+<dl>
+<dt><a href="#rfbm">rfbm</a> : <code>object</code></dt>
+<dd></dd>
+</dl>
+
 ## Functions
 
 <dl>
-<dt><a href="#confirmReferral">confirmReferral(referralId)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
-<dd><p>Confirm Referral.</p>
-</dd>
-<dt><a href="#createNewReferralMember">createNewReferralMember(newReferralMember)</a> ⇒ <code><a href="#MemberSummary">Promise.&lt;MemberSummary&gt;</a></code></dt>
-<dd><p>Create A New Referral Member.</p>
-</dd>
-<dt><a href="#findReferralProgramMember">findReferralProgramMember(programId, application, userId)</a> ⇒ <code>Promise.&lt;(ReferralProgramMember|undefined)&gt;</code></dt>
-<dd><p>Find Referral Program Member.</p>
-</dd>
-<dt><a href="#getMemberReferralStatistics">getMemberReferralStatistics(programId, memberId)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
-<dd><p>Get Member Referral Statistics</p>
-</dd>
 <dt><a href="#submitEvent">submitEvent(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
 <dd><p>Send UCC Web Tracking Event.</p>
 </dd>
@@ -68,41 +63,68 @@ Usage
 <dd><p>Payout Settings Type.</p>
 </dd>
 <dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
+<dd><p>Referral Program Member Type.</p>
+</dd>
+<dt><a href="#ReferralProgram">ReferralProgram</a> : <code>Object</code></dt>
+<dd><p>Referral Program Type.</p>
+</dd>
+<dt><a href="#ReferralMember">ReferralMember</a> : <code>Object</code></dt>
 <dd><p>Referral Member Type.</p>
+</dd>
+<dt><a href="#ReferralFriend">ReferralFriend</a> : <code>Object</code></dt>
+<dd><p>Referral Friend Type.</p>
+</dd>
+<dt><a href="#Referral">Referral</a> : <code>Object</code></dt>
+<dd><p>Referral Type.</p>
+</dd>
+<dt><a href="#ReferralDetails">ReferralDetails</a> : <code>Object</code></dt>
+<dd><p>Referral Details Type.</p>
 </dd>
 </dl>
 
-<a name="confirmReferral"></a>
+<a name="rfbm"></a>
 
-## confirmReferral(referralId) ⇒ <code>Promise.&lt;any&gt;</code>
+## rfbm : <code>object</code>
+**Kind**: global namespace
+
+* [rfbm](#rfbm) : <code>object</code>
+    * [.confirmReferral(referralId)](#rfbm.confirmReferral) ⇒ <code>Promise.&lt;any&gt;</code>
+    * [.createNewReferralMember(newReferralMember)](#rfbm.createNewReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
+    * [.findReferralProgramMember(programId, application, userId)](#rfbm.findReferralProgramMember) ⇒ [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember)
+    * [.getMemberReferralStatistics(programId, memberId)](#rfbm.getMemberReferralStatistics) ⇒ <code>Promise.&lt;any&gt;</code>
+    * [.getReferralDetails(referralId)](#rfbm.getReferralDetails) ⇒ [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails)
+
+<a name="rfbm.confirmReferral"></a>
+
+### rfbm.confirmReferral(referralId) ⇒ <code>Promise.&lt;any&gt;</code>
 Confirm Referral.
 
-**Kind**: global function
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
 **Returns**: <code>Promise.&lt;any&gt;</code> - Confirm Referral Result
 
 | Param | Type | Description |
 | --- | --- | --- |
 | referralId | <code>string</code> | Referral Id. |
 
-<a name="createNewReferralMember"></a>
+<a name="rfbm.createNewReferralMember"></a>
 
-## createNewReferralMember(newReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
+### rfbm.createNewReferralMember(newReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
 Create A New Referral Member.
 
-**Kind**: global function
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
 **Returns**: [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary) - New Referral Result
 
 | Param | Type | Description |
 | --- | --- | --- |
 | newReferralMember | [<code>NewReferralMember</code>](#NewReferralMember) | New Referral Member. |
 
-<a name="findReferralProgramMember"></a>
+<a name="rfbm.findReferralProgramMember"></a>
 
-## findReferralProgramMember(programId, application, userId) ⇒ <code>Promise.&lt;(ReferralProgramMember\|undefined)&gt;</code>
+### rfbm.findReferralProgramMember(programId, application, userId) ⇒ [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember)
 Find Referral Program Member.
 
-**Kind**: global function
-**Returns**: <code>Promise.&lt;(ReferralProgramMember\|undefined)&gt;</code> - Get Referral Program Member Result
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember) - Get Referral Program Member Result
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -110,18 +132,30 @@ Find Referral Program Member.
 | application | <code>string</code> | Application or External System. |
 | userId | <code>string</code> | Referral Program User Id. |
 
-<a name="getMemberReferralStatistics"></a>
+<a name="rfbm.getMemberReferralStatistics"></a>
 
-## getMemberReferralStatistics(programId, memberId) ⇒ <code>Promise.&lt;any&gt;</code>
+### rfbm.getMemberReferralStatistics(programId, memberId) ⇒ <code>Promise.&lt;any&gt;</code>
 Get Member Referral Statistics
 
-**Kind**: global function
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
 **Returns**: <code>Promise.&lt;any&gt;</code> - Get Member Referral Statistics Result
 
 | Param | Type | Description |
 | --- | --- | --- |
 | programId | <code>string</code> | Referral Program Id. |
 | memberId | <code>string</code> | Referral Program Member Id. |
+
+<a name="rfbm.getReferralDetails"></a>
+
+### rfbm.getReferralDetails(referralId) ⇒ [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails)
+Get Referral Details
+
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails) - Get Referral Details Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| referralId | <code>string</code> | Referral Id. |
 
 <a name="submitEvent"></a>
 
@@ -216,7 +250,7 @@ Payout Settings Type.
 <a name="ReferralProgramMember"></a>
 
 ## ReferralProgramMember : <code>Object</code>
-Referral Member Type.
+Referral Program Member Type.
 
 **Kind**: global typedef
 **Properties**
@@ -230,3 +264,69 @@ Referral Member Type.
 | payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | payoutSettings. |
 | socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMediaProfiles. |
 | email | <code>string</code> | email. |
+
+<a name="ReferralProgram"></a>
+
+## ReferralProgram : <code>Object</code>
+Referral Program Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | referral program title |
+| description | <code>string</code> | referral program description |
+
+<a name="ReferralMember"></a>
+
+## ReferralMember : <code>Object</code>
+Referral Member Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | referral member firstName |
+| lastName | <code>string</code> | referral member lastName |
+
+<a name="ReferralFriend"></a>
+
+## ReferralFriend : <code>Object</code>
+Referral Friend Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | referred friend firstName |
+| lastName | <code>string</code> | referred friend lastName |
+
+<a name="Referral"></a>
+
+## Referral : <code>Object</code>
+Referral Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| program | [<code>ReferralProgram</code>](#ReferralProgram) | referral program |
+| member | [<code>ReferralMember</code>](#ReferralMember) | referral member |
+| friend- | [<code>ReferralFriend</code>](#ReferralFriend) | referred friend |
+
+<a name="ReferralDetails"></a>
+
+## ReferralDetails : <code>Object</code>
+Referral Details Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| message | <code>string</code> | message |
+| result | [<code>Referral</code>](#Referral) | result |

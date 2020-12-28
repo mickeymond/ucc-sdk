@@ -41,6 +41,7 @@
   /**
    * Create A New Referral Member.
    * @function
+   * @memberof rfbm
    * @param {NewReferralMember} newReferralMember - New Referral Member.
    * @returns {Promise<MemberSummary>} New Referral Result
    */
@@ -49,6 +50,133 @@
     const response = await axios__default['default'].post(ENDPOINT, newReferralMember);
     return response.data;
   }
+
+  const _createNewReferralMember = createNewReferralMember;
+
+  /**
+   * Payout Settings Type.
+   * @typedef {Object} PayoutSettings
+   * @property {string} blockchain - blockchain.
+   * @property {string} address - address.
+   */
+
+  /**
+   * Payout Settings Type.
+   * @typedef {Object} SocialMediaProfiles
+   * @property {string} username - username.
+   * @property {string} provider - provider.
+   */
+
+  /**
+   * Referral Program Member Type.
+   * @typedef {Object} ReferralProgramMember
+   * @property {string} firstName - firstName.
+   * @property {string} lastName - lastName.
+   * @property {string} phone - phone.
+   * @property {string} country - country.
+   * @property {Array<PayoutSettings>} payoutSettings - payoutSettings.
+   * @property {Array<SocialMediaProfiles>} socialMediaProfiles - socialMediaProfiles.
+   * @property {string} email - email.
+   */
+
+  /**
+   * Find Referral Program Member.
+   * @function
+   * @memberof rfbm
+   * @param {string} programId - Referral Program Id.
+   * @param {string} application - Application or External System.
+   * @param {string} userId - Referral Program User Id.
+   * @returns {Promise<ReferralProgramMember>} Get Referral Program Member Result
+   */
+  async function findReferralProgramMember(programId, application, userId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/members/programs/${programId}?externalSystem=${application}&userId=${userId}`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  const _findReferralProgramMember = findReferralProgramMember;
+
+  /**
+   * Confirm Referral.
+   * @function
+   * @memberof rfbm
+   * @param {string} referralId - Referral Id.
+   * @returns {Promise<any>} Confirm Referral Result
+   */
+  async function confirmReferral(referralId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/confirm`;
+    const response = await axios__default['default'].patch(ENDPOINT);
+    return response.data;
+  }
+
+  const _confirmReferral = confirmReferral;
+
+  /**
+   * Get Member Referral Statistics
+   * @function
+   * @memberof rfbm
+   * @param {string} programId - Referral Program Id.
+   * @param {string} memberId - Referral Program Member Id.
+   * @returns {Promise<any>} Get Member Referral Statistics Result
+   */
+  async function getMemberReferralStatistics(programId, memberId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/programs/${programId}/members/${memberId}/statistics`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  const _getMemberReferralStatistics = getMemberReferralStatistics;
+
+  /**
+   * Referral Program Type.
+   * @typedef {Object} ReferralProgram
+   * @property {string} title - referral program title
+   * @property {string} description - referral program description
+   */
+
+  /**
+   * Referral Member Type.
+   * @typedef {Object} ReferralMember
+   * @property {string} firstName - referral member firstName
+   * @property {string} lastName - referral member lastName
+   */
+
+  /**
+   * Referral Friend Type.
+   * @typedef {Object} ReferralFriend
+   * @property {string} firstName - referred friend firstName
+   * @property {string} lastName - referred friend lastName
+   */
+
+  /**
+   * Referral Type.
+   * @typedef {Object} Referral
+   * @property {ReferralProgram} program - referral program
+   * @property {ReferralMember} member - referral member
+   * @property {ReferralFriend} friend- referred friend
+   */
+
+  /**
+   * Referral Details Type.
+   * @typedef {Object} ReferralDetails
+   * @property {string} message - message
+   * @property {Referral} result - result
+   */
+
+  /**
+   * Get Referral Details
+   * @function
+   * @memberof rfbm
+   * @param {string} referralId - Referral Id.
+   * @returns {Promise<ReferralDetails>} Get Referral Details Result
+   */
+  async function getReferralDetails(referralId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1​/rfbm​/referrals​/${referralId}`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  const _getReferralDetails = getReferralDetails;
 
   /**
    * Send UCC Web Tracking Event.
@@ -82,76 +210,19 @@
     return response.data;
   }
 
-  /**
-   * Payout Settings Type.
-   * @typedef {Object} PayoutSettings
-   * @property {string} blockchain - blockchain.
-   * @property {string} address - address.
-   */
+  const _submitEvent = submitEvent;
 
-  /**
-   * Payout Settings Type.
-   * @typedef {Object} SocialMediaProfiles
-   * @property {string} username - username.
-   * @property {string} provider - provider.
-   */
+  /** @namespace */
+  const rfbm = {
+    createNewReferralMember: _createNewReferralMember,
+    findReferralProgramMember: _findReferralProgramMember,
+    confirmReferral: _confirmReferral,
+    getMemberReferralStatistics: _getMemberReferralStatistics,
+    getReferralDetails: _getReferralDetails
+  };
 
-  /**
-   * Referral Member Type.
-   * @typedef {Object} ReferralProgramMember
-   * @property {string} firstName - firstName.
-   * @property {string} lastName - lastName.
-   * @property {string} phone - phone.
-   * @property {string} country - country.
-   * @property {Array<PayoutSettings>} payoutSettings - payoutSettings.
-   * @property {Array<SocialMediaProfiles>} socialMediaProfiles - socialMediaProfiles.
-   * @property {string} email - email.
-   */
-
-  /**
-   * Find Referral Program Member.
-   * @function
-   * @param {string} programId - Referral Program Id.
-   * @param {string} application - Application or External System.
-   * @param {string} userId - Referral Program User Id.
-   * @returns {Promise<ReferralProgramMember | undefined>} Get Referral Program Member Result
-   */
-  async function findReferralProgramMember(programId, application, userId) {
-    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/members/programs/${programId}?externalSystem=${application}&userId=${userId}`;
-    const response = await axios__default['default'].get(ENDPOINT);
-    return response.data;
-  }
-
-  /**
-   * Confirm Referral.
-   * @function
-   * @param {string} referralId - Referral Id.
-   * @returns {Promise<any>} Confirm Referral Result
-   */
-  async function confirmReferral(referralId) {
-    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/confirm`;
-    const response = await axios__default['default'].patch(ENDPOINT);
-    return response.data;
-  }
-
-  /**
-   * Get Member Referral Statistics
-   * @function
-   * @param {string} programId - Referral Program Id.
-   * @param {string} memberId - Referral Program Member Id.
-   * @returns {Promise<any>} Get Member Referral Statistics Result
-   */
-  async function getMemberReferralStatistics(programId, memberId) {
-    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/programs/${programId}/members/${memberId}/statistics`;
-    const response = await axios__default['default'].get(ENDPOINT);
-    return response.data;
-  }
-
-  exports.confirmReferral = confirmReferral;
-  exports.createNewReferralMember = createNewReferralMember;
-  exports.findReferralProgramMember = findReferralProgramMember;
-  exports.getMemberReferralStatistics = getMemberReferralStatistics;
-  exports.submitEvent = submitEvent;
+  exports.rfbm = rfbm;
+  exports.submitEvent = _submitEvent;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

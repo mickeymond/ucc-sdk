@@ -10,7 +10,7 @@ import axios from 'axios';
  * @param {object} user - User Data If Applicable.
  * @returns {Promise<any>} Web Tracking Response
  */
-export async function submitEvent(customerId, projectId, event, data, user = {}) {
+async function submitEvent(customerId, projectId, event, data, user = {}) {
   const ENDPOINT = 'https://pmxfwkh2ka.execute-api.eu-central-1.amazonaws.com/default/ucc-web-tracker';
   // Get Browser Context
   const context = {}
@@ -31,3 +31,5 @@ export async function submitEvent(customerId, projectId, event, data, user = {})
   const response = await axios.post(ENDPOINT, body);
   return response.data;
 }
+
+export const _submitEvent = submitEvent;
