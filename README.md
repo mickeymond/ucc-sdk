@@ -88,11 +88,25 @@ Usage
 **Kind**: global namespace
 
 * [rfbm](#rfbm) : <code>object</code>
+    * [.associateFriend(referralId, userId)](#rfbm.associateFriend) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.confirmReferral(referralId)](#rfbm.confirmReferral) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.createNewReferralMember(newReferralMember)](#rfbm.createNewReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
     * [.findReferralProgramMember(programId, application, userId)](#rfbm.findReferralProgramMember) ⇒ [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember)
     * [.getMemberReferralStatistics(programId, memberId)](#rfbm.getMemberReferralStatistics) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.getReferralDetails(referralId)](#rfbm.getReferralDetails) ⇒ [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails)
+
+<a name="rfbm.associateFriend"></a>
+
+### rfbm.associateFriend(referralId, userId) ⇒ <code>Promise.&lt;any&gt;</code>
+Associate Friend.
+
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: <code>Promise.&lt;any&gt;</code> - Associate Friend Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| referralId | <code>string</code> | Referral Id. |
+| userId | <code>string</code> | User Id. |
 
 <a name="rfbm.confirmReferral"></a>
 

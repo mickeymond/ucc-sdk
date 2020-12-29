@@ -179,6 +179,22 @@
   const _getReferralDetails = getReferralDetails;
 
   /**
+   * Associate Friend.
+   * @function
+   * @memberof rfbm
+   * @param {string} referralId - Referral Id.
+   * @param {string} userId - User Id.
+   * @returns {Promise<any>} Associate Friend Result
+   */
+  async function associateFriend(referralId, userId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/referrals/${referralId}/friends/${userId}`;
+    const response = await axios__default['default'].post(ENDPOINT);
+    return response.data;
+  }
+
+  const _associateFriend = associateFriend;
+
+  /**
    * Send UCC Web Tracking Event.
    * @function
    * @param {string} customerId - UCC Customer ID.
@@ -218,7 +234,8 @@
     findReferralProgramMember: _findReferralProgramMember,
     confirmReferral: _confirmReferral,
     getMemberReferralStatistics: _getMemberReferralStatistics,
-    getReferralDetails: _getReferralDetails
+    getReferralDetails: _getReferralDetails,
+    associateFriend: _associateFriend
   };
 
   exports.rfbm = rfbm;
