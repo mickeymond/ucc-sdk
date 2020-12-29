@@ -3,6 +3,7 @@ import axios from 'axios';
 /**
  * Send UCC Web Tracking Event.
  * @function
+ * @memberof track
  * @param {string} customerId - UCC Customer ID.
  * @param {string} projectId - UCC Project/Source ID.
  * @param {string} event - Event Name - Find out from Project Manager.

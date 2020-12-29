@@ -1,21 +1,21 @@
 import axios from 'axios';
 
 /**
- * Referral Program Type.
+ * ReferralProgram Type.
  * @typedef {Object} ReferralProgram
  * @property {string} title - referral program title
  * @property {string} description - referral program description
  */
 
 /**
- * Referral Member Type.
+ * ReferralMember Type.
  * @typedef {Object} ReferralMember
  * @property {string} firstName - referral member firstName
  * @property {string} lastName - referral member lastName
  */
 
 /**
- * Referral Friend Type.
+ * ReferralFriend Type.
  * @typedef {Object} ReferralFriend
  * @property {string} firstName - referred friend firstName
  * @property {string} lastName - referred friend lastName
@@ -30,7 +30,7 @@ import axios from 'axios';
  */
 
 /**
- * Referral Details Type.
+ * ReferralDetails Type.
  * @typedef {Object} ReferralDetails
  * @property {string} message - message
  * @property {Referral} result - result

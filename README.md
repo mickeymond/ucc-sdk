@@ -34,51 +34,65 @@ Usage
 <dl>
 <dt><a href="#rfbm">rfbm</a> : <code>object</code></dt>
 <dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#submitEvent">submitEvent(customerId, projectId, event, data, user)</a> ⇒ <code>Promise.&lt;any&gt;</code></dt>
-<dd><p>Send UCC Web Tracking Event.</p>
-</dd>
+<dt><a href="#user">user</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#track">track</a> : <code>object</code></dt>
+<dd></dd>
 </dl>
 
 ## Typedefs
 
 <dl>
 <dt><a href="#AssociatedAccount">AssociatedAccount</a> : <code>Object</code></dt>
-<dd><p>Associated Account Type.</p>
+<dd><p>AssociatedAccount Type.</p>
 </dd>
 <dt><a href="#NewReferralMember">NewReferralMember</a> : <code>Object</code></dt>
-<dd><p>New Referral Member Type.</p>
+<dd><p>NewReferralMember Type.</p>
 </dd>
 <dt><a href="#MemberSummary">MemberSummary</a> : <code>Object</code></dt>
-<dd><p>Referral Member Summary Type.</p>
+<dd><p>MemberSummary Type.</p>
 </dd>
 <dt><a href="#PayoutSettings">PayoutSettings</a> : <code>Object</code></dt>
-<dd><p>Payout Settings Type.</p>
+<dd><p>PayoutSettings Type.</p>
 </dd>
 <dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
-<dd><p>Payout Settings Type.</p>
+<dd><p>SocialMediaProfiles Type.</p>
 </dd>
 <dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
-<dd><p>Referral Program Member Type.</p>
+<dd><p>ReferralProgramMember Type.</p>
 </dd>
 <dt><a href="#ReferralProgram">ReferralProgram</a> : <code>Object</code></dt>
-<dd><p>Referral Program Type.</p>
+<dd><p>ReferralProgram Type.</p>
 </dd>
 <dt><a href="#ReferralMember">ReferralMember</a> : <code>Object</code></dt>
-<dd><p>Referral Member Type.</p>
+<dd><p>ReferralMember Type.</p>
 </dd>
 <dt><a href="#ReferralFriend">ReferralFriend</a> : <code>Object</code></dt>
-<dd><p>Referral Friend Type.</p>
+<dd><p>ReferralFriend Type.</p>
 </dd>
 <dt><a href="#Referral">Referral</a> : <code>Object</code></dt>
 <dd><p>Referral Type.</p>
 </dd>
 <dt><a href="#ReferralDetails">ReferralDetails</a> : <code>Object</code></dt>
-<dd><p>Referral Details Type.</p>
+<dd><p>ReferralDetails Type.</p>
+</dd>
+<dt><a href="#PhoneInfo">PhoneInfo</a> : <code>Object</code></dt>
+<dd><p>PhoneInfo Type.</p>
+</dd>
+<dt><a href="#BrowserInfo">BrowserInfo</a> : <code>Object</code></dt>
+<dd><p>BrowserInfo Type.</p>
+</dd>
+<dt><a href="#SocialMedia">SocialMedia</a> : <code>Object</code></dt>
+<dd><p>SocialMedia Type.</p>
+</dd>
+<dt><a href="#PersonalData">PersonalData</a> : <code>Object</code></dt>
+<dd><p>PersonalData Type.</p>
+</dd>
+<dt><a href="#UserProfile">UserProfile</a> : <code>Object</code></dt>
+<dd><p>UserProfile Type.</p>
+</dd>
+<dt><a href="#UserProfileResult">UserProfileResult</a> : <code>Object</code></dt>
+<dd><p>UserProfileResult Type.</p>
 </dd>
 </dl>
 
@@ -171,12 +185,33 @@ Get Referral Details
 | --- | --- | --- |
 | referralId | <code>string</code> | Referral Id. |
 
-<a name="submitEvent"></a>
+<a name="user"></a>
 
-## submitEvent(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>
+## user : <code>object</code>
+**Kind**: global namespace
+<a name="user.getUserByAssociatedAccount"></a>
+
+### user.getUserByAssociatedAccount(externalSystem, externalUserId) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+Get User By Associated Account
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult) - Get User By Associated Account Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| externalSystem | <code>string</code> | External System. |
+| externalUserId | <code>string</code> | External User Id. |
+
+<a name="track"></a>
+
+## track : <code>object</code>
+**Kind**: global namespace
+<a name="track.submitEvent"></a>
+
+### track.submitEvent(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>
 Send UCC Web Tracking Event.
 
-**Kind**: global function
+**Kind**: static method of [<code>track</code>](#track)
 **Returns**: <code>Promise.&lt;any&gt;</code> - Web Tracking Response
 
 | Param | Type | Description |
@@ -190,7 +225,7 @@ Send UCC Web Tracking Event.
 <a name="AssociatedAccount"></a>
 
 ## AssociatedAccount : <code>Object</code>
-Associated Account Type.
+AssociatedAccount Type.
 
 **Kind**: global typedef
 **Properties**
@@ -203,7 +238,7 @@ Associated Account Type.
 <a name="NewReferralMember"></a>
 
 ## NewReferralMember : <code>Object</code>
-New Referral Member Type.
+NewReferralMember Type.
 
 **Kind**: global typedef
 **Properties**
@@ -223,7 +258,7 @@ New Referral Member Type.
 <a name="MemberSummary"></a>
 
 ## MemberSummary : <code>Object</code>
-Referral Member Summary Type.
+MemberSummary Type.
 
 **Kind**: global typedef
 **Properties**
@@ -238,7 +273,7 @@ Referral Member Summary Type.
 <a name="PayoutSettings"></a>
 
 ## PayoutSettings : <code>Object</code>
-Payout Settings Type.
+PayoutSettings Type.
 
 **Kind**: global typedef
 **Properties**
@@ -251,7 +286,7 @@ Payout Settings Type.
 <a name="SocialMediaProfiles"></a>
 
 ## SocialMediaProfiles : <code>Object</code>
-Payout Settings Type.
+SocialMediaProfiles Type.
 
 **Kind**: global typedef
 **Properties**
@@ -264,7 +299,7 @@ Payout Settings Type.
 <a name="ReferralProgramMember"></a>
 
 ## ReferralProgramMember : <code>Object</code>
-Referral Program Member Type.
+ReferralProgramMember Type.
 
 **Kind**: global typedef
 **Properties**
@@ -282,7 +317,7 @@ Referral Program Member Type.
 <a name="ReferralProgram"></a>
 
 ## ReferralProgram : <code>Object</code>
-Referral Program Type.
+ReferralProgram Type.
 
 **Kind**: global typedef
 **Properties**
@@ -295,7 +330,7 @@ Referral Program Type.
 <a name="ReferralMember"></a>
 
 ## ReferralMember : <code>Object</code>
-Referral Member Type.
+ReferralMember Type.
 
 **Kind**: global typedef
 **Properties**
@@ -308,7 +343,7 @@ Referral Member Type.
 <a name="ReferralFriend"></a>
 
 ## ReferralFriend : <code>Object</code>
-Referral Friend Type.
+ReferralFriend Type.
 
 **Kind**: global typedef
 **Properties**
@@ -335,7 +370,7 @@ Referral Type.
 <a name="ReferralDetails"></a>
 
 ## ReferralDetails : <code>Object</code>
-Referral Details Type.
+ReferralDetails Type.
 
 **Kind**: global typedef
 **Properties**
@@ -344,3 +379,96 @@ Referral Details Type.
 | --- | --- | --- |
 | message | <code>string</code> | message |
 | result | [<code>Referral</code>](#Referral) | result |
+
+<a name="PhoneInfo"></a>
+
+## PhoneInfo : <code>Object</code>
+PhoneInfo Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| _id | <code>string</code> | _id |
+| brand | <code>string</code> | brand |
+| deviceId | <code>string</code> | deviceId |
+| deviceLocale | <code>string</code> | deviceLocale |
+| timeZone | <code>string</code> | timeZone |
+| timeStamp | <code>string</code> | timeStamp |
+| isTablet | <code>boolean</code> | isTablet |
+
+<a name="BrowserInfo"></a>
+
+## BrowserInfo : <code>Object</code>
+BrowserInfo Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| _id | <code>string</code> | _id |
+| timeStamp | <code>string</code> | timeStamp |
+| userAgent | <code>string</code> | userAgent |
+
+<a name="SocialMedia"></a>
+
+## SocialMedia : <code>Object</code>
+SocialMedia Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| _id | <code>string</code> | _id |
+| username | <code>string</code> | username |
+| provider | <code>string</code> | provider |
+
+<a name="PersonalData"></a>
+
+## PersonalData : <code>Object</code>
+PersonalData Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | firstName |
+| lastName | <code>string</code> | lastName |
+| gender | <code>string</code> | gender |
+| yearOfBirth | <code>string</code> | yearOfBirth |
+| countryOfResidence | <code>string</code> | countryOfResidence |
+| nationality | <code>string</code> | nationality |
+| socialMedia | [<code>Array.&lt;SocialMedia&gt;</code>](#SocialMedia) | socialMedia |
+
+<a name="UserProfile"></a>
+
+## UserProfile : <code>Object</code>
+UserProfile Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| _id | <code>string</code> | _id |
+| blockchainAddress | <code>string</code> | blockchainAddress |
+| personalData | [<code>PersonalData</code>](#PersonalData) | personalData |
+| phoneInfo | [<code>Array.&lt;PhoneInfo&gt;</code>](#PhoneInfo) | phoneInfo |
+| browserInfo | [<code>Array.&lt;BrowserInfo&gt;</code>](#BrowserInfo) | browserInfo |
+
+<a name="UserProfileResult"></a>
+
+## UserProfileResult : <code>Object</code>
+UserProfileResult Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| count | <code>number</code> | count |
+| result | [<code>Array.&lt;UserProfile&gt;</code>](#UserProfile) | result |

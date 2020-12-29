@@ -1,21 +1,21 @@
 import axios from 'axios';
 
 /**
- * Payout Settings Type.
+ * PayoutSettings Type.
  * @typedef {Object} PayoutSettings
  * @property {string} blockchain - blockchain.
  * @property {string} address - address.
  */
 
 /**
- * Payout Settings Type.
+ * SocialMediaProfiles Type.
  * @typedef {Object} SocialMediaProfiles
  * @property {string} username - username.
  * @property {string} provider - provider.
  */
 
 /**
- * Referral Program Member Type.
+ * ReferralProgramMember Type.
  * @typedef {Object} ReferralProgramMember
  * @property {string} firstName - firstName.
  * @property {string} lastName - lastName.

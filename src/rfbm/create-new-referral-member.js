@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 /**
- * Associated Account Type.
+ * AssociatedAccount Type.
  * @typedef {Object} AssociatedAccount
  * @property {string} application - ucc application or external system.
  * @property {string} userId - ucc userId.
  */
 
 /**
- * New Referral Member Type.
+ * NewReferralMember Type.
  * @typedef {Object} NewReferralMember
  * @property {string} firstName - firstName.
  * @property {string} lastName - lastName.
@@ -22,7 +22,7 @@ import axios from 'axios';
  */
 
 /**
- * Referral Member Summary Type.
+ * MemberSummary Type.
  * @typedef {Object} MemberSummary
  * @property {string} userProfileId - userProfileId.
  * @property {string} auth0Id - auth0Id.
