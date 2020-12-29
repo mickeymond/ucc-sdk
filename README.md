@@ -206,6 +206,24 @@ Get User By Associated Account
 
 ## track : <code>object</code>
 **Kind**: global namespace
+
+* [track](#track) : <code>object</code>
+    * [.invokeWebhook(webhookUrl, data)](#track.invokeWebhook) ⇒ <code>Promise.&lt;any&gt;</code>
+    * [.submitEvent(customerId, projectId, event, data, user)](#track.submitEvent) ⇒ <code>Promise.&lt;any&gt;</code>
+
+<a name="track.invokeWebhook"></a>
+
+### track.invokeWebhook(webhookUrl, data) ⇒ <code>Promise.&lt;any&gt;</code>
+Invoke Webhook
+
+**Kind**: static method of [<code>track</code>](#track)
+**Returns**: <code>Promise.&lt;any&gt;</code> - Web Tracking Response
+
+| Param | Type | Description |
+| --- | --- | --- |
+| webhookUrl | <code>string</code> | webhookUrl |
+| data | <code>object</code> | data |
+
 <a name="track.submitEvent"></a>
 
 ### track.submitEvent(customerId, projectId, event, data, user) ⇒ <code>Promise.&lt;any&gt;</code>

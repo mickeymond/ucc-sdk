@@ -306,6 +306,21 @@
 
   const _submitEvent = submitEvent;
 
+  /**
+   * Invoke Webhook
+   * @function
+   * @memberof track
+   * @param {string} webhookUrl - webhookUrl
+   * @param {object} data - data
+   * @returns {Promise<any>} Web Tracking Response
+   */
+  async function invokeWebhook(webhookUrl, data) {
+    const response = await axios__default['default'].post(webhookUrl, data);
+    return response.data;
+  }
+
+  const _invokeWebhook = invokeWebhook;
+
   // rfbm methods
 
   /** @namespace */
@@ -325,7 +340,8 @@
 
   /** @namespace */
   const track = {
-    submitEvent: _submitEvent
+    submitEvent: _submitEvent,
+    invokeWebhook: _invokeWebhook
   };
 
   exports.rfbm = rfbm;

@@ -11,6 +11,7 @@ import { _getUserByAssociatedAccount } from './user/get-user-by-associated-accou
 
 // track methods
 import { _submitEvent } from './track/ucc-web-tracker';
+import { _invokeWebhook } from './track/invoke-webhook';
 
 /** @namespace */
 export const rfbm = {
@@ -29,5 +30,6 @@ export const user = {
 
 /** @namespace */
 export const track = {
-  submitEvent: _submitEvent
+  submitEvent: _submitEvent,
+  invokeWebhook: _invokeWebhook
 }
