@@ -76,6 +76,15 @@ Usage
 <dt><a href="#ReferralDetails">ReferralDetails</a> : <code>Object</code></dt>
 <dd><p>ReferralDetails Type.</p>
 </dd>
+<dt><a href="#AssociatedAccount">AssociatedAccount</a> : <code>Object</code></dt>
+<dd><p>AssociatedAccount Type.</p>
+</dd>
+<dt><a href="#NewUserProfile">NewUserProfile</a> : <code>Object</code></dt>
+<dd><p>NewUserProfile Type.</p>
+</dd>
+<dt><a href="#UserProfileResult">UserProfileResult</a> : <code>Object</code></dt>
+<dd><p>UserProfileResult Type.</p>
+</dd>
 <dt><a href="#PhoneInfo">PhoneInfo</a> : <code>Object</code></dt>
 <dd><p>PhoneInfo Type.</p>
 </dd>
@@ -189,6 +198,23 @@ Get Referral Details
 
 ## user : <code>object</code>
 **Kind**: global namespace
+
+* [user](#user) : <code>object</code>
+    * [.create(newUserProfile)](#user.create) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+    * [.getUserByAssociatedAccount(externalSystem, externalUserId)](#user.getUserByAssociatedAccount) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+
+<a name="user.create"></a>
+
+### user.create(newUserProfile) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+Create A New User Profile.
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult) - New User Profile Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newUserProfile | [<code>NewUserProfile</code>](#NewUserProfile) | New User Profile. |
+
 <a name="user.getUserByAssociatedAccount"></a>
 
 ### user.getUserByAssociatedAccount(externalSystem, externalUserId) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
@@ -397,6 +423,50 @@ ReferralDetails Type.
 | --- | --- | --- |
 | message | <code>string</code> | message |
 | result | [<code>Referral</code>](#Referral) | result |
+
+<a name="AssociatedAccount"></a>
+
+## AssociatedAccount : <code>Object</code>
+AssociatedAccount Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| application | <code>string</code> | ucc application or external system. |
+| userId | <code>string</code> | ucc userId. |
+
+<a name="NewUserProfile"></a>
+
+## NewUserProfile : <code>Object</code>
+NewUserProfile Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | firstName. |
+| lastName | <code>string</code> | lastName. |
+| email | <code>string</code> | email. |
+| phone | <code>string</code> | phone. |
+| country | <code>string</code> | country. |
+| password | <code>string</code> | password. |
+| associatedAccount | [<code>AssociatedAccount</code>](#AssociatedAccount) | associatedAccount. |
+
+<a name="UserProfileResult"></a>
+
+## UserProfileResult : <code>Object</code>
+UserProfileResult Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| userProfileId | <code>string</code> | userProfileId. |
+| auth0Id | <code>string</code> | auth0Id. |
 
 <a name="PhoneInfo"></a>
 

@@ -8,6 +8,7 @@ import { _associateFriend } from './rfbm/associate-friend';
 
 // user methods
 import { _getUserByAssociatedAccount } from './user/get-user-by-associated-account';
+import { _create } from './user/create';
 
 // track methods
 import { _submitEvent } from './track/ucc-web-tracker';
@@ -25,7 +26,8 @@ export const rfbm = {
 
 /** @namespace */
 export const user = {
-  getUserByAssociatedAccount: _getUserByAssociatedAccount
+  getUserByAssociatedAccount: _getUserByAssociatedAccount,
+  create: _create
 }
 
 /** @namespace */
