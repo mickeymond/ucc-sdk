@@ -1,8 +1,4 @@
-/** SDK METHODS TYPES */
-import './schema';
-
 /** SDK METHODS */
-
  // rfbm methods
 import { _createNewReferralMember } from './rfbm/create-new-referral-member';
 import { _findReferralProgramMember } from './rfbm/find-referral-member';

@@ -1,6 +1,62 @@
 import axios from 'axios';
 
 /**
+ * SocialMediaProfiles Type.
+ * @typedef {Object} SocialMediaProfiles
+ * @property {string} username - username.
+ * @property {string} provider - provider.
+ */
+
+/**
+ * PhoneInfo Type.
+ * @typedef {Object} PhoneInfo
+ * @property {string} _id - _id
+ * @property {string} brand - brand
+ * @property {string} deviceId - deviceId
+ * @property {string} deviceLocale - deviceLocale
+ * @property {string} timeZone - timeZone
+ * @property {string} timeStamp - timeStamp
+ * @property {boolean} isTablet - isTablet
+ */
+
+/**
+ * BrowserInfo Type.
+ * @typedef {Object} BrowserInfo
+ * @property {string} _id - _id
+ * @property {string} timeStamp - timeStamp
+ * @property {string} userAgent - userAgent
+ */
+
+/**
+ * PersonalData Type.
+ * @typedef {Object} PersonalData
+ * @property {string} firstName - firstName
+ * @property {string} lastName - lastName
+ * @property {string} gender - gender
+ * @property {string} yearOfBirth - yearOfBirth
+ * @property {string} countryOfResidence - countryOfResidence
+ * @property {string} nationality - nationality
+ * @property {Array<SocialMediaProfiles>} socialMedia - socialMedia
+ */
+
+/**
+ * UserProfile Type.
+ * @typedef {Object} UserProfile
+ * @property {string} _id - _id
+ * @property {string} blockchainAddress - blockchainAddress
+ * @property {PersonalData} personalData - personalData
+ * @property {Array<PhoneInfo>} phoneInfo - phoneInfo
+ * @property {Array<BrowserInfo>} browserInfo - browserInfo
+ */
+
+/**
+ * UserProfileResult Type.
+ * @typedef {Object} UserProfileResult
+ * @property {number} count - count
+ * @property {Array<UserProfile>} result - result
+ */
+
+/**
  * Get User By Associated Account
  * @function
  * @memberof user
