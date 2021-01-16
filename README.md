@@ -64,6 +64,30 @@ Usage
 <dt><a href="#ReferralProgramMemberResult">ReferralProgramMemberResult</a> : <code>Object</code></dt>
 <dd><p>ReferralProgramMember Type.</p>
 </dd>
+<dt><a href="#PayoutSettings">PayoutSettings</a> : <code>Object</code></dt>
+<dd><p>PayoutSettings Type.</p>
+</dd>
+<dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
+<dd><p>SocialMediaProfiles Type.</p>
+</dd>
+<dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
+<dd><p>ReferralProgramMember Type.</p>
+</dd>
+<dt><a href="#ReferralProgramMemberResult">ReferralProgramMemberResult</a> : <code>Object</code></dt>
+<dd><p>ReferralProgramMember Type.</p>
+</dd>
+<dt><a href="#PayoutSettings">PayoutSettings</a> : <code>Object</code></dt>
+<dd><p>PayoutSettings Type.</p>
+</dd>
+<dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
+<dd><p>SocialMediaProfiles Type.</p>
+</dd>
+<dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
+<dd><p>ReferralProgramMember Type.</p>
+</dd>
+<dt><a href="#ReferralProgramMemberResult">ReferralProgramMemberResult</a> : <code>Object</code></dt>
+<dd><p>ReferralProgramMember Type.</p>
+</dd>
 <dt><a href="#ReferralProgram">ReferralProgram</a> : <code>Object</code></dt>
 <dd><p>ReferralProgram Type.</p>
 </dd>
@@ -82,8 +106,11 @@ Usage
 <dt><a href="#NewUserProfile">NewUserProfile</a> : <code>Object</code></dt>
 <dd><p>NewUserProfile Type.</p>
 </dd>
-<dt><a href="#UserProfileResult">UserProfileResult</a> : <code>Object</code></dt>
-<dd><p>UserProfileResult Type.</p>
+<dt><a href="#NewUserProfileResult">NewUserProfileResult</a> : <code>Object</code></dt>
+<dd><p>NewUserProfileResult Type.</p>
+</dd>
+<dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
+<dd><p>SocialMediaProfiles Type.</p>
 </dd>
 <dt><a href="#PhoneInfo">PhoneInfo</a> : <code>Object</code></dt>
 <dd><p>PhoneInfo Type.</p>
@@ -239,16 +266,16 @@ Get Referral Details
 **Kind**: global namespace
 
 * [user](#user) : <code>object</code>
-    * [.create(newUserProfile)](#user.create) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+    * [.create(newUserProfile)](#user.create) ⇒ [<code>Promise.&lt;NewUserProfileResult&gt;</code>](#NewUserProfileResult)
     * [.getUserByAssociatedAccount(externalSystem, externalUserId)](#user.getUserByAssociatedAccount) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
 
 <a name="user.create"></a>
 
-### user.create(newUserProfile) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+### user.create(newUserProfile) ⇒ [<code>Promise.&lt;NewUserProfileResult&gt;</code>](#NewUserProfileResult)
 Create A New User Profile.
 
 **Kind**: static method of [<code>user</code>](#user)
-**Returns**: [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult) - New User Profile Result
+**Returns**: [<code>Promise.&lt;NewUserProfileResult&gt;</code>](#NewUserProfileResult) - New User Profile Result
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -409,6 +436,118 @@ ReferralProgramMember Type.
 | --- | --- | --- |
 | result | [<code>ReferralProgramMember</code>](#ReferralProgramMember) | referral member. |
 
+<a name="PayoutSettings"></a>
+
+## PayoutSettings : <code>Object</code>
+PayoutSettings Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| blockchain | <code>string</code> | blockchain. |
+| address | <code>string</code> | address. |
+
+<a name="SocialMediaProfiles"></a>
+
+## SocialMediaProfiles : <code>Object</code>
+SocialMediaProfiles Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| username | <code>string</code> | username. |
+| provider | <code>string</code> | provider. |
+
+<a name="ReferralProgramMember"></a>
+
+## ReferralProgramMember : <code>Object</code>
+ReferralProgramMember Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | firstName. |
+| lastName | <code>string</code> | lastName. |
+| phone | <code>string</code> | phone. |
+| country | <code>string</code> | country. |
+| payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | payoutSettings. |
+| socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMediaProfiles. |
+| email | <code>string</code> | email. |
+
+<a name="ReferralProgramMemberResult"></a>
+
+## ReferralProgramMemberResult : <code>Object</code>
+ReferralProgramMember Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| result | [<code>ReferralProgramMember</code>](#ReferralProgramMember) | referral member. |
+
+<a name="PayoutSettings"></a>
+
+## PayoutSettings : <code>Object</code>
+PayoutSettings Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| blockchain | <code>string</code> | blockchain. |
+| address | <code>string</code> | address. |
+
+<a name="SocialMediaProfiles"></a>
+
+## SocialMediaProfiles : <code>Object</code>
+SocialMediaProfiles Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| username | <code>string</code> | username. |
+| provider | <code>string</code> | provider. |
+
+<a name="ReferralProgramMember"></a>
+
+## ReferralProgramMember : <code>Object</code>
+ReferralProgramMember Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| firstName | <code>string</code> | firstName. |
+| lastName | <code>string</code> | lastName. |
+| phone | <code>string</code> | phone. |
+| country | <code>string</code> | country. |
+| payoutSettings | [<code>Array.&lt;PayoutSettings&gt;</code>](#PayoutSettings) | payoutSettings. |
+| socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMediaProfiles. |
+| email | <code>string</code> | email. |
+
+<a name="ReferralProgramMemberResult"></a>
+
+## ReferralProgramMemberResult : <code>Object</code>
+ReferralProgramMember Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| result | [<code>ReferralProgramMember</code>](#ReferralProgramMember) | referral member. |
+
 <a name="ReferralProgram"></a>
 
 ## ReferralProgram : <code>Object</code>
@@ -493,10 +632,10 @@ NewUserProfile Type.
 | password | <code>string</code> | password. |
 | associatedAccount | [<code>AssociatedAccount</code>](#AssociatedAccount) | associatedAccount. |
 
-<a name="UserProfileResult"></a>
+<a name="NewUserProfileResult"></a>
 
-## UserProfileResult : <code>Object</code>
-UserProfileResult Type.
+## NewUserProfileResult : <code>Object</code>
+NewUserProfileResult Type.
 
 **Kind**: global typedef
 **Properties**
@@ -505,6 +644,19 @@ UserProfileResult Type.
 | --- | --- | --- |
 | userProfileId | <code>string</code> | userProfileId. |
 | auth0Id | <code>string</code> | auth0Id. |
+
+<a name="SocialMediaProfiles"></a>
+
+## SocialMediaProfiles : <code>Object</code>
+SocialMediaProfiles Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| username | <code>string</code> | username. |
+| provider | <code>string</code> | provider. |
 
 <a name="PhoneInfo"></a>
 

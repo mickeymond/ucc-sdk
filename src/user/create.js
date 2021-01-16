@@ -13,8 +13,8 @@ import axios from 'axios';
  */
 
 /**
- * UserProfileResult Type.
- * @typedef {Object} UserProfileResult
+ * NewUserProfileResult Type.
+ * @typedef {Object} NewUserProfileResult
  * @property {string} userProfileId - userProfileId.
  * @property {string} auth0Id - auth0Id.
  */
@@ -24,7 +24,7 @@ import axios from 'axios';
  * @function
  * @memberof user
  * @param {NewUserProfile} newUserProfile - New User Profile.
- * @returns {Promise<UserProfileResult>} New User Profile Result
+ * @returns {Promise<NewUserProfileResult>} New User Profile Result
  */
 async function create(newUserProfile) {
   const ENDPOINT = 'https://pmxfwkh2ka.execute-api.eu-central-1.amazonaws.com/default/ucc-create-user-profile';
