@@ -1,14 +1,15 @@
 import axios from 'axios';
 
 /**
- * Get User By Associated Account
+ * Get Member By Associated Account
  * @function
- * @memberof user
+ * @memberof rfbm
  * @param {string} externalSystem - External System.
  * @param {string} externalUserId - External User Id.
- * @returns {Promise<UserProfileResult>} Get User By Associated Account Result
+ * @param {string} programId - Referral Program Id.
+ * @returns {Promise<ReferralProgramMemberResult>} Get Member By Associated Account Result
  */
-async function getUserByAssociatedAccount(externalSystem, externalUserId) {
+async function getMemberByAssociatedAccount(externalSystem, externalUserId, programId) {
   const filter = {
     "associatedAccounts.application": externalSystem,
     "associatedAccounts.userId": externalUserId,
@@ -18,4 +19,4 @@ async function getUserByAssociatedAccount(externalSystem, externalUserId) {
   return response.data;
 }
 
-export const _getUserByAssociatedAccount = getUserByAssociatedAccount;
+export const _getMemberByAssociatedAccount = getMemberByAssociatedAccount;

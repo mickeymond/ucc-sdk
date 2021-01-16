@@ -1,36 +1,6 @@
 import axios from 'axios';
 
 /**
- * AssociatedAccount Type.
- * @typedef {Object} AssociatedAccount
- * @property {string} application - ucc application or external system.
- * @property {string} userId - ucc userId.
- */
-
-/**
- * NewReferralMember Type.
- * @typedef {Object} NewReferralMember
- * @property {string} firstName - firstName.
- * @property {string} lastName - lastName.
- * @property {string} email - email.
- * @property {string} phone - phone.
- * @property {string} country - country.
- * @property {string} password - password.
- * @property {AssociatedAccount} associatedAccount - associatedAccount.
- * @property {string} referralCode - referralCode.
- * @property {string} referralProgramId - referralProgramId.
- */
-
-/**
- * MemberSummary Type.
- * @typedef {Object} MemberSummary
- * @property {string} userProfileId - userProfileId.
- * @property {string} auth0Id - auth0Id.
- * @property {string} memberId - memberId.
- * @property {string} referralLink - referralLink.
- */
-
-/**
  * Create A New Referral Member.
  * @function
  * @memberof rfbm

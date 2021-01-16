@@ -9,36 +9,6 @@
   var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 
   /**
-   * AssociatedAccount Type.
-   * @typedef {Object} AssociatedAccount
-   * @property {string} application - ucc application or external system.
-   * @property {string} userId - ucc userId.
-   */
-
-  /**
-   * NewReferralMember Type.
-   * @typedef {Object} NewReferralMember
-   * @property {string} firstName - firstName.
-   * @property {string} lastName - lastName.
-   * @property {string} email - email.
-   * @property {string} phone - phone.
-   * @property {string} country - country.
-   * @property {string} password - password.
-   * @property {AssociatedAccount} associatedAccount - associatedAccount.
-   * @property {string} referralCode - referralCode.
-   * @property {string} referralProgramId - referralProgramId.
-   */
-
-  /**
-   * MemberSummary Type.
-   * @typedef {Object} MemberSummary
-   * @property {string} userProfileId - userProfileId.
-   * @property {string} auth0Id - auth0Id.
-   * @property {string} memberId - memberId.
-   * @property {string} referralLink - referralLink.
-   */
-
-  /**
    * Create A New Referral Member.
    * @function
    * @memberof rfbm
@@ -52,32 +22,6 @@
   }
 
   const _createNewReferralMember = createNewReferralMember;
-
-  /**
-   * PayoutSettings Type.
-   * @typedef {Object} PayoutSettings
-   * @property {string} blockchain - blockchain.
-   * @property {string} address - address.
-   */
-
-  /**
-   * SocialMediaProfiles Type.
-   * @typedef {Object} SocialMediaProfiles
-   * @property {string} username - username.
-   * @property {string} provider - provider.
-   */
-
-  /**
-   * ReferralProgramMember Type.
-   * @typedef {Object} ReferralProgramMember
-   * @property {string} firstName - firstName.
-   * @property {string} lastName - lastName.
-   * @property {string} phone - phone.
-   * @property {string} country - country.
-   * @property {Array<PayoutSettings>} payoutSettings - payoutSettings.
-   * @property {Array<SocialMediaProfiles>} socialMediaProfiles - socialMediaProfiles.
-   * @property {string} email - email.
-   */
 
   /**
    * Find Referral Program Member.
@@ -128,42 +72,6 @@
   const _getMemberReferralStatistics = getMemberReferralStatistics;
 
   /**
-   * ReferralProgram Type.
-   * @typedef {Object} ReferralProgram
-   * @property {string} title - referral program title
-   * @property {string} description - referral program description
-   */
-
-  /**
-   * ReferralMember Type.
-   * @typedef {Object} ReferralMember
-   * @property {string} firstName - referral member firstName
-   * @property {string} lastName - referral member lastName
-   */
-
-  /**
-   * ReferralFriend Type.
-   * @typedef {Object} ReferralFriend
-   * @property {string} firstName - referred friend firstName
-   * @property {string} lastName - referred friend lastName
-   */
-
-  /**
-   * Referral Type.
-   * @typedef {Object} Referral
-   * @property {ReferralProgram} program - referral program
-   * @property {ReferralMember} member - referral member
-   * @property {ReferralFriend} friend- referred friend
-   */
-
-  /**
-   * ReferralDetails Type.
-   * @typedef {Object} ReferralDetails
-   * @property {string} message - message
-   * @property {Referral} result - result
-   */
-
-  /**
    * Get Referral Details
    * @function
    * @memberof rfbm
@@ -195,61 +103,56 @@
   const _associateFriend = associateFriend;
 
   /**
-   * PhoneInfo Type.
-   * @typedef {Object} PhoneInfo
-   * @property {string} _id - _id
-   * @property {string} brand - brand
-   * @property {string} deviceId - deviceId
-   * @property {string} deviceLocale - deviceLocale
-   * @property {string} timeZone - timeZone
-   * @property {string} timeStamp - timeStamp
-   * @property {boolean} isTablet - isTablet
+   * Get Member By User Id.
+   * @function
+   * @memberof rfbm
+   * @param {string} programId - Referral Program Id.
+   * @param {string} userId - auth0 ID.
+   * @returns {Promise<ReferralProgramMemberResult>} Get Member By User Id Result
    */
+  async function getMemberByUserId(programId, userId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/members?filter={"$or":[{"auth0.smsId":"${userId}"},{"auth0.emailId":"${userId}"}]}`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  const _getMemberByUserId = getMemberByUserId;
 
   /**
-   * BrowserInfo Type.
-   * @typedef {Object} BrowserInfo
-   * @property {string} _id - _id
-   * @property {string} timeStamp - timeStamp
-   * @property {string} userAgent - userAgent
+   * Get Member By Associated Account
+   * @function
+   * @memberof rfbm
+   * @param {string} externalSystem - External System.
+   * @param {string} externalUserId - External User Id.
+   * @param {string} programId - Referral Program Id.
+   * @returns {Promise<ReferralProgramMemberResult>} Get Member By Associated Account Result
    */
+  async function getMemberByAssociatedAccount(externalSystem, externalUserId, programId) {
+    const filter = {
+      "associatedAccounts.application": externalSystem,
+      "associatedAccounts.userId": externalUserId,
+    };
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/users?filter=${JSON.stringify(filter)}`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
+
+  const _getMemberByAssociatedAccount = getMemberByAssociatedAccount;
 
   /**
-   * SocialMedia Type.
-   * @typedef {Object} SocialMedia
-   * @property {string} _id - _id
-   * @property {string} username - username
-   * @property {string} provider - provider
+   * Get Member By Friend.
+   * @function
+   * @memberof rfbm
+   * @param {string} userId - user objectId.
+   * @returns {Promise<ReferralProgramMemberResult>} Get Member By Friend Result
    */
+  async function getMemberByFriend(userId) {
+    const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/members?filter={"$or":[{"auth0.smsId":"${userId}"},{"auth0.emailId":"${userId}"}]}`;
+    const response = await axios__default['default'].get(ENDPOINT);
+    return response.data;
+  }
 
-  /**
-   * PersonalData Type.
-   * @typedef {Object} PersonalData
-   * @property {string} firstName - firstName
-   * @property {string} lastName - lastName
-   * @property {string} gender - gender
-   * @property {string} yearOfBirth - yearOfBirth
-   * @property {string} countryOfResidence - countryOfResidence
-   * @property {string} nationality - nationality
-   * @property {Array<SocialMedia>} socialMedia - socialMedia
-   */
-
-  /**
-   * UserProfile Type.
-   * @typedef {Object} UserProfile
-   * @property {string} _id - _id
-   * @property {string} blockchainAddress - blockchainAddress
-   * @property {PersonalData} personalData - personalData
-   * @property {Array<PhoneInfo>} phoneInfo - phoneInfo
-   * @property {Array<BrowserInfo>} browserInfo - browserInfo
-   */
-
-  /**
-   * UserProfileResult Type.
-   * @typedef {Object} UserProfileResult
-   * @property {number} count - count
-   * @property {Array<UserProfile>} result - result
-   */
+  const _getMemberByFriend = getMemberByFriend;
 
   /**
    * Get User By Associated Account
@@ -270,32 +173,6 @@
   }
 
   const _getUserByAssociatedAccount = getUserByAssociatedAccount;
-
-  /**
-   * AssociatedAccount Type.
-   * @typedef {Object} AssociatedAccount
-   * @property {string} application - ucc application or external system.
-   * @property {string} userId - ucc userId.
-   */
-
-  /**
-   * NewUserProfile Type.
-   * @typedef {Object} NewUserProfile
-   * @property {string} firstName - firstName.
-   * @property {string} lastName - lastName.
-   * @property {string} email - email.
-   * @property {string} phone - phone.
-   * @property {string} country - country.
-   * @property {string} password - password.
-   * @property {AssociatedAccount} associatedAccount - associatedAccount.
-   */
-
-  /**
-   * UserProfileResult Type.
-   * @typedef {Object} UserProfileResult
-   * @property {string} userProfileId - userProfileId.
-   * @property {string} auth0Id - auth0Id.
-   */
 
   /**
    * Create A New User Profile.
@@ -362,7 +239,7 @@
 
   const _invokeWebhook = invokeWebhook;
 
-  // rfbm methods
+  /** SDK METHODS TYPES */
 
   /** @namespace */
   const rfbm = {
@@ -371,7 +248,10 @@
     confirmReferral: _confirmReferral,
     getMemberReferralStatistics: _getMemberReferralStatistics,
     getReferralDetails: _getReferralDetails,
-    associateFriend: _associateFriend
+    associateFriend: _associateFriend,
+    getMemberByUserId: _getMemberByUserId,
+    getMemberByAssociatedAccount: _getMemberByAssociatedAccount,
+    getMemberByFriend: _getMemberByFriend
   };
 
   /** @namespace */

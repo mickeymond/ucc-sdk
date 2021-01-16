@@ -61,6 +61,9 @@ Usage
 <dt><a href="#ReferralProgramMember">ReferralProgramMember</a> : <code>Object</code></dt>
 <dd><p>ReferralProgramMember Type.</p>
 </dd>
+<dt><a href="#ReferralProgramMemberResult">ReferralProgramMemberResult</a> : <code>Object</code></dt>
+<dd><p>ReferralProgramMember Type.</p>
+</dd>
 <dt><a href="#ReferralProgram">ReferralProgram</a> : <code>Object</code></dt>
 <dd><p>ReferralProgram Type.</p>
 </dd>
@@ -76,9 +79,6 @@ Usage
 <dt><a href="#ReferralDetails">ReferralDetails</a> : <code>Object</code></dt>
 <dd><p>ReferralDetails Type.</p>
 </dd>
-<dt><a href="#AssociatedAccount">AssociatedAccount</a> : <code>Object</code></dt>
-<dd><p>AssociatedAccount Type.</p>
-</dd>
 <dt><a href="#NewUserProfile">NewUserProfile</a> : <code>Object</code></dt>
 <dd><p>NewUserProfile Type.</p>
 </dd>
@@ -90,9 +90,6 @@ Usage
 </dd>
 <dt><a href="#BrowserInfo">BrowserInfo</a> : <code>Object</code></dt>
 <dd><p>BrowserInfo Type.</p>
-</dd>
-<dt><a href="#SocialMedia">SocialMedia</a> : <code>Object</code></dt>
-<dd><p>SocialMedia Type.</p>
 </dd>
 <dt><a href="#PersonalData">PersonalData</a> : <code>Object</code></dt>
 <dd><p>PersonalData Type.</p>
@@ -115,6 +112,9 @@ Usage
     * [.confirmReferral(referralId)](#rfbm.confirmReferral) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.createNewReferralMember(newReferralMember)](#rfbm.createNewReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
     * [.findReferralProgramMember(programId, application, userId)](#rfbm.findReferralProgramMember) ⇒ [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember)
+    * [.getMemberByAssociatedAccount(externalSystem, externalUserId, programId)](#rfbm.getMemberByAssociatedAccount) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+    * [.getMemberByFriend(userId)](#rfbm.getMemberByFriend) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+    * [.getMemberByUserId(programId, userId)](#rfbm.getMemberByUserId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
     * [.getMemberReferralStatistics(programId, memberId)](#rfbm.getMemberReferralStatistics) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.getReferralDetails(referralId)](#rfbm.getReferralDetails) ⇒ [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails)
 
@@ -168,6 +168,45 @@ Find Referral Program Member.
 | programId | <code>string</code> | Referral Program Id. |
 | application | <code>string</code> | Application or External System. |
 | userId | <code>string</code> | Referral Program User Id. |
+
+<a name="rfbm.getMemberByAssociatedAccount"></a>
+
+### rfbm.getMemberByAssociatedAccount(externalSystem, externalUserId, programId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+Get Member By Associated Account
+
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult) - Get Member By Associated Account Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| externalSystem | <code>string</code> | External System. |
+| externalUserId | <code>string</code> | External User Id. |
+| programId | <code>string</code> | Referral Program Id. |
+
+<a name="rfbm.getMemberByFriend"></a>
+
+### rfbm.getMemberByFriend(userId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+Get Member By Friend.
+
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult) - Get Member By Friend Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | user objectId. |
+
+<a name="rfbm.getMemberByUserId"></a>
+
+### rfbm.getMemberByUserId(programId, userId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+Get Member By User Id.
+
+**Kind**: static method of [<code>rfbm</code>](#rfbm)
+**Returns**: [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult) - Get Member By User Id Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| programId | <code>string</code> | Referral Program Id. |
+| userId | <code>string</code> | auth0 ID. |
 
 <a name="rfbm.getMemberReferralStatistics"></a>
 
@@ -358,6 +397,18 @@ ReferralProgramMember Type.
 | socialMediaProfiles | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMediaProfiles. |
 | email | <code>string</code> | email. |
 
+<a name="ReferralProgramMemberResult"></a>
+
+## ReferralProgramMemberResult : <code>Object</code>
+ReferralProgramMember Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| result | [<code>ReferralProgramMember</code>](#ReferralProgramMember) | referral member. |
+
 <a name="ReferralProgram"></a>
 
 ## ReferralProgram : <code>Object</code>
@@ -424,19 +475,6 @@ ReferralDetails Type.
 | message | <code>string</code> | message |
 | result | [<code>Referral</code>](#Referral) | result |
 
-<a name="AssociatedAccount"></a>
-
-## AssociatedAccount : <code>Object</code>
-AssociatedAccount Type.
-
-**Kind**: global typedef
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| application | <code>string</code> | ucc application or external system. |
-| userId | <code>string</code> | ucc userId. |
-
 <a name="NewUserProfile"></a>
 
 ## NewUserProfile : <code>Object</code>
@@ -500,20 +538,6 @@ BrowserInfo Type.
 | timeStamp | <code>string</code> | timeStamp |
 | userAgent | <code>string</code> | userAgent |
 
-<a name="SocialMedia"></a>
-
-## SocialMedia : <code>Object</code>
-SocialMedia Type.
-
-**Kind**: global typedef
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| _id | <code>string</code> | _id |
-| username | <code>string</code> | username |
-| provider | <code>string</code> | provider |
-
 <a name="PersonalData"></a>
 
 ## PersonalData : <code>Object</code>
@@ -530,7 +554,7 @@ PersonalData Type.
 | yearOfBirth | <code>string</code> | yearOfBirth |
 | countryOfResidence | <code>string</code> | countryOfResidence |
 | nationality | <code>string</code> | nationality |
-| socialMedia | [<code>Array.&lt;SocialMedia&gt;</code>](#SocialMedia) | socialMedia |
+| socialMedia | [<code>Array.&lt;SocialMediaProfiles&gt;</code>](#SocialMediaProfiles) | socialMedia |
 
 <a name="UserProfile"></a>
 
