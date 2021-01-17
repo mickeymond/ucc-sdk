@@ -140,7 +140,7 @@ Usage
     * [.createNewReferralMember(newReferralMember)](#rfbm.createNewReferralMember) ⇒ [<code>Promise.&lt;MemberSummary&gt;</code>](#MemberSummary)
     * [.findReferralProgramMember(programId, application, userId)](#rfbm.findReferralProgramMember) ⇒ [<code>Promise.&lt;ReferralProgramMember&gt;</code>](#ReferralProgramMember)
     * [.getMemberByAssociatedAccount(externalSystem, externalUserId, programId)](#rfbm.getMemberByAssociatedAccount) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
-    * [.getMemberByFriend(userId)](#rfbm.getMemberByFriend) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+    * [.getMemberByFriend(userId, programId)](#rfbm.getMemberByFriend) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
     * [.getMemberByUserId(programId, userId)](#rfbm.getMemberByUserId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
     * [.getMemberReferralStatistics(programId, memberId)](#rfbm.getMemberReferralStatistics) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.getReferralDetails(referralId)](#rfbm.getReferralDetails) ⇒ [<code>Promise.&lt;ReferralDetails&gt;</code>](#ReferralDetails)
@@ -212,7 +212,7 @@ Get Member By Associated Account
 
 <a name="rfbm.getMemberByFriend"></a>
 
-### rfbm.getMemberByFriend(userId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
+### rfbm.getMemberByFriend(userId, programId) ⇒ [<code>Promise.&lt;ReferralProgramMemberResult&gt;</code>](#ReferralProgramMemberResult)
 Get Member By Friend.
 
 **Kind**: static method of [<code>rfbm</code>](#rfbm)
@@ -221,6 +221,7 @@ Get Member By Friend.
 | Param | Type | Description |
 | --- | --- | --- |
 | userId | <code>string</code> | user objectId. |
+| programId | <code>string</code> | Referral Program Id. |
 
 <a name="rfbm.getMemberByUserId"></a>
 

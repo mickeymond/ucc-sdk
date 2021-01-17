@@ -37,11 +37,12 @@ import axios from 'axios';
  * @function
  * @memberof rfbm
  * @param {string} userId - user objectId.
+ * @param {string} programId - Referral Program Id.
  * @returns {Promise<ReferralProgramMemberResult>} Get Member By Friend Result
  */
-async function getMemberByFriend(userId) {
-  const ENDPOINT = `https://api.unchainedcarrot.com/v1/rfbm/members?filter={"$or":[{"auth0.smsId":"${userId}"},{"auth0.emailId":"${userId}"}]}`;
-  const response = await axios.get(ENDPOINT);
+async function getMemberByFriend(userId, programId) {
+  const referralResponse = await axios.get(`https://api.unchainedcarrot.com/v1/rfbm/referrals?filter={"friend":"${userId}","program":"${programId}"}`);
+  const response = await axios.get(`https://api.unchainedcarrot.com/v1/rfbm/members/${referralResponse.data.referrals[0].member}`);
   return response.data;
 }
 
