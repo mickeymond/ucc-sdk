@@ -344,7 +344,7 @@ AssociatedAccount Type.
 | Name | Type | Description |
 | --- | --- | --- |
 | application | <code>string</code> | ucc application or external system. |
-| userId | <code>string</code> | ucc userId. |
+| userId | <code>string</code> | ucc application or external system userId. |
 
 <a name="NewReferralMember"></a>
 

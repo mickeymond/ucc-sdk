@@ -4,7 +4,7 @@ import axios from 'axios';
  * AssociatedAccount Type.
  * @typedef {Object} AssociatedAccount
  * @property {string} application - ucc application or external system.
- * @property {string} userId - ucc userId.
+ * @property {string} userId - ucc application or external system userId.
  */
 
 /**
