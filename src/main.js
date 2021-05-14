@@ -12,6 +12,7 @@ import { _getMemberByFriend } from './rfbm/get-member-by-friend';
 
 // user methods
 import { _getUserByAssociatedAccount } from './user/get-user-by-associated-account';
+import { _createStoreCard } from './user/create-store-card';
 import { _create } from './user/create';
 
 // track methods
@@ -34,6 +35,7 @@ export const rfbm = {
 /** @namespace */
 export const user = {
   getUserByAssociatedAccount: _getUserByAssociatedAccount,
+  createStoreCard: _createStoreCard,
   create: _create
 }
 

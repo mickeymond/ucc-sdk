@@ -103,6 +103,12 @@ Usage
 <dt><a href="#ReferralDetails">ReferralDetails</a> : <code>Object</code></dt>
 <dd><p>ReferralDetails Type.</p>
 </dd>
+<dt><a href="#NewStoreCard">NewStoreCard</a> : <code>Object</code></dt>
+<dd><p>NewStoreCard Type.</p>
+</dd>
+<dt><a href="#NewStoreCardResult">NewStoreCardResult</a> : <code>Object</code></dt>
+<dd><p>NewStoreCard Result Type.</p>
+</dd>
 <dt><a href="#NewUserProfile">NewUserProfile</a> : <code>Object</code></dt>
 <dd><p>NewUserProfile Type.</p>
 </dd>
@@ -267,8 +273,21 @@ Get Referral Details
 **Kind**: global namespace
 
 * [user](#user) : <code>object</code>
+    * [.createStoreCard(newStoreCard)](#user.createStoreCard) ⇒ [<code>Promise.&lt;NewStoreCardResult&gt;</code>](#NewStoreCardResult)
     * [.create(newUserProfile)](#user.create) ⇒ [<code>Promise.&lt;NewUserProfileResult&gt;</code>](#NewUserProfileResult)
     * [.getUserByAssociatedAccount(externalSystem, externalUserId)](#user.getUserByAssociatedAccount) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+
+<a name="user.createStoreCard"></a>
+
+### user.createStoreCard(newStoreCard) ⇒ [<code>Promise.&lt;NewStoreCardResult&gt;</code>](#NewStoreCardResult)
+Create Store Card.
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: [<code>Promise.&lt;NewStoreCardResult&gt;</code>](#NewStoreCardResult) - New Store Card Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newStoreCard | [<code>NewStoreCard</code>](#NewStoreCard) | New Store Card |
 
 <a name="user.create"></a>
 
@@ -614,6 +633,35 @@ ReferralDetails Type.
 | --- | --- | --- |
 | message | <code>string</code> | message |
 | result | [<code>Referral</code>](#Referral) | result |
+
+<a name="NewStoreCard"></a>
+
+## NewStoreCard : <code>Object</code>
+NewStoreCard Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| walletProvider | <code>string</code> | walletProvider. |
+| templateId | <code>string</code> | templateId. |
+| customerId | <code>string</code> | customerId. |
+| userId | <code>string</code> | userId. |
+
+<a name="NewStoreCardResult"></a>
+
+## NewStoreCardResult : <code>Object</code>
+NewStoreCard Result Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| passTypeIdentifier | <code>string</code> | passTypeIdentifier. |
+| serialNumber | <code>string</code> | serialNumber. |
+| description | <code>string</code> | description. |
 
 <a name="NewUserProfile"></a>
 
