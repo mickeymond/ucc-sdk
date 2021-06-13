@@ -9,8 +9,12 @@ export default [
 		output: {
 			name: 'uccSdk',
 			file: 'dist/bundle.umd.js',
-			format: 'umd'
+			format: 'umd',
+			globals: {
+				'axios': 'axios'
+			}
 		},
+		external: [ 'axios' ],
 		plugins: [
 			resolve(), // so Rollup can find `axios`
 			commonjs(), // so Rollup can convert `axios` to an ES module
