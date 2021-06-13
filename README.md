@@ -115,6 +115,9 @@ Usage
 <dt><a href="#NewUserProfileResult">NewUserProfileResult</a> : <code>Object</code></dt>
 <dd><p>NewUserProfileResult Type.</p>
 </dd>
+<dt><a href="#NewEngagement">NewEngagement</a> : <code>Object</code></dt>
+<dd><p>NewEngagement Type.</p>
+</dd>
 <dt><a href="#SocialMediaProfiles">SocialMediaProfiles</a> : <code>Object</code></dt>
 <dd><p>SocialMediaProfiles Type.</p>
 </dd>
@@ -132,6 +135,12 @@ Usage
 </dd>
 <dt><a href="#UserProfileResult">UserProfileResult</a> : <code>Object</code></dt>
 <dd><p>UserProfileResult Type.</p>
+</dd>
+<dt><a href="#NewOptIn">NewOptIn</a> : <code>Object</code></dt>
+<dd><p>NewOptIn Type.</p>
+</dd>
+<dt><a href="#NewOptOut">NewOptOut</a> : <code>Object</code></dt>
+<dd><p>NewOptOut Type.</p>
 </dd>
 </dl>
 
@@ -275,7 +284,10 @@ Get Referral Details
 * [user](#user) : <code>object</code>
     * [.createStoreCard(newStoreCard)](#user.createStoreCard) ⇒ [<code>Promise.&lt;NewStoreCardResult&gt;</code>](#NewStoreCardResult)
     * [.create(newUserProfile)](#user.create) ⇒ [<code>Promise.&lt;NewUserProfileResult&gt;</code>](#NewUserProfileResult)
+    * [.engagedWith(userId, newEngagement)](#user.engagedWith) ⇒ <code>Promise.&lt;any&gt;</code>
     * [.getUserByAssociatedAccount(externalSystem, externalUserId)](#user.getUserByAssociatedAccount) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
+    * [.optIn(userId, customerId, newOptIn)](#user.optIn) ⇒ <code>Promise.&lt;any&gt;</code>
+    * [.optOut(userId, customerId, newOptOut)](#user.optOut) ⇒ <code>Promise.&lt;any&gt;</code>
 
 <a name="user.createStoreCard"></a>
 
@@ -301,6 +313,19 @@ Create A New User Profile.
 | --- | --- | --- |
 | newUserProfile | [<code>NewUserProfile</code>](#NewUserProfile) | New User Profile. |
 
+<a name="user.engagedWith"></a>
+
+### user.engagedWith(userId, newEngagement) ⇒ <code>Promise.&lt;any&gt;</code>
+Add A New Engagement.
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: <code>Promise.&lt;any&gt;</code> - New Engagement Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | User ObjectID |
+| newEngagement | [<code>NewEngagement</code>](#NewEngagement) | New Engagement. |
+
 <a name="user.getUserByAssociatedAccount"></a>
 
 ### user.getUserByAssociatedAccount(externalSystem, externalUserId) ⇒ [<code>Promise.&lt;UserProfileResult&gt;</code>](#UserProfileResult)
@@ -313,6 +338,34 @@ Get User By Associated Account
 | --- | --- | --- |
 | externalSystem | <code>string</code> | External System. |
 | externalUserId | <code>string</code> | External User Id. |
+
+<a name="user.optIn"></a>
+
+### user.optIn(userId, customerId, newOptIn) ⇒ <code>Promise.&lt;any&gt;</code>
+Add A New Opt In.
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: <code>Promise.&lt;any&gt;</code> - New Opt In Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | User ObjectID |
+| customerId | <code>string</code> | Customer ObjectID |
+| newOptIn | [<code>NewOptIn</code>](#NewOptIn) | New Opt In. |
+
+<a name="user.optOut"></a>
+
+### user.optOut(userId, customerId, newOptOut) ⇒ <code>Promise.&lt;any&gt;</code>
+Add A New Opt In.
+
+**Kind**: static method of [<code>user</code>](#user)
+**Returns**: <code>Promise.&lt;any&gt;</code> - New Opt In Result
+
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | User ObjectID |
+| customerId | <code>string</code> | Customer ObjectID |
+| newOptOut | [<code>NewOptOut</code>](#NewOptOut) | New Opt In. |
 
 <a name="track"></a>
 
@@ -694,6 +747,19 @@ NewUserProfileResult Type.
 | userProfileId | <code>string</code> | userProfileId. |
 | auth0Id | <code>string</code> | auth0Id. |
 
+<a name="NewEngagement"></a>
+
+## NewEngagement : <code>Object</code>
+NewEngagement Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| customerId | <code>string</code> | customerId. |
+| firstTimeOn | <code>string</code> | firstTimeOn. |
+
 <a name="SocialMediaProfiles"></a>
 
 ## SocialMediaProfiles : <code>Object</code>
@@ -785,3 +851,33 @@ UserProfileResult Type.
 | --- | --- | --- |
 | count | <code>number</code> | count |
 | result | [<code>Array.&lt;UserProfile&gt;</code>](#UserProfile) | result |
+
+<a name="NewOptIn"></a>
+
+## NewOptIn : <code>Object</code>
+NewOptIn Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| productOrService | <code>string</code> | productOrService. |
+| optedInOn | <code>string</code> | optedInOn. |
+| optedInIpAddress | <code>string</code> | optedInIpAddress. |
+| optedInUserAgent | <code>string</code> | optedInUserAgent. |
+| optedInFormUrl | <code>string</code> | optedInFormUrl. |
+
+<a name="NewOptOut"></a>
+
+## NewOptOut : <code>Object</code>
+NewOptOut Type.
+
+**Kind**: global typedef
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| productOrService | <code>string</code> | productOrService. |
+| optedOutOn | <code>string</code> | optedOutOn. |
+| optedOutIpAddress | <code>string</code> | optedOutIpAddress. |

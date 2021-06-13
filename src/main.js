@@ -14,6 +14,9 @@ import { _getMemberByFriend } from './rfbm/get-member-by-friend';
 import { _getUserByAssociatedAccount } from './user/get-user-by-associated-account';
 import { _createStoreCard } from './user/create-store-card';
 import { _create } from './user/create';
+import { _engagedWith } from './user/engaged-with';
+import { _optIn } from './user/opt-in';
+import { _optOut } from './user/opt-out';
 
 // track methods
 import { _submitEvent } from './track/ucc-web-tracker';
@@ -36,7 +39,10 @@ export const rfbm = {
 export const user = {
   getUserByAssociatedAccount: _getUserByAssociatedAccount,
   createStoreCard: _createStoreCard,
-  create: _create
+  create: _create,
+  engagedWith: _engagedWith,
+  optIn: _optIn,
+  optOut: _optOut
 }
 
 /** @namespace */
