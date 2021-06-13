@@ -2,7 +2,9 @@
   "name": "ucc-sdk",
   "version": "1.27.0",
   "description": "UnchainedCarrot SDK",
-  "main": "dist/bundle.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "browser": "dist/bundle.umd.js",
   "scripts": {
     "build": "rollup --config",
     "docs": "jsdoc2md src/**/*.js"
@@ -26,11 +28,12 @@
   },
   "homepage": "https://github.com/mickeymond/ucc-sdk",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "jsdoc-to-markdown": "^6.0.1",
-    "rollup": "^2.35.1"
+    "rollup": "^2.51.2"
   },
-  "jsdelivr": "dist/bundle.js",
-  "unpkg": "dist/bundle.js",
   "dependencies": {
     "axios": "^0.21.1"
   }
