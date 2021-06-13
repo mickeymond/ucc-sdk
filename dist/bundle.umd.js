@@ -1009,14 +1009,19 @@
   var followRedirects = {exports: {}};
 
   var debug$1;
-  try {
-    /* eslint global-require: off */
-    debug$1 = require$$0__default['default']("follow-redirects");
-  }
-  catch (error) {
-    debug$1 = function () { /* */ };
-  }
-  var debug_1 = debug$1;
+
+  var debug_1 = function () {
+    if (!debug$1) {
+      try {
+        /* eslint global-require: off */
+        debug$1 = require$$0__default['default']("follow-redirects");
+      }
+      catch (error) {
+        debug$1 = function () { /* */ };
+      }
+    }
+    debug$1.apply(null, arguments);
+  };
 
   var url$1 = require$$0__default$1['default'];
   var URL$1 = url$1.URL;
@@ -1027,8 +1032,9 @@
   var debug = debug_1;
 
   // Create handlers that pass events from native requests
+  var events = ["abort", "aborted", "connect", "error", "socket", "timeout"];
   var eventHandlers = Object.create(null);
-  ["abort", "aborted", "connect", "error", "socket", "timeout"].forEach(function (event) {
+  events.forEach(function (event) {
     eventHandlers[event] = function (arg1, arg2, arg3) {
       this._redirectable.emit(event, arg1, arg2, arg3);
     };
@@ -1080,6 +1086,11 @@
     this._performRequest();
   }
   RedirectableRequest.prototype = Object.create(Writable.prototype);
+
+  RedirectableRequest.prototype.abort = function () {
+    abortRequest(this._currentRequest);
+    this.emit("abort");
+  };
 
   // Writes buffered data to the current native request
   RedirectableRequest.prototype.write = function (data, encoding, callback) {
@@ -1160,40 +1171,58 @@
 
   // Global timeout for all underlying requests
   RedirectableRequest.prototype.setTimeout = function (msecs, callback) {
+    var self = this;
     if (callback) {
-      this.once("timeout", callback);
+      this.on("timeout", callback);
     }
 
+    function destroyOnTimeout(socket) {
+      socket.setTimeout(msecs);
+      socket.removeListener("timeout", socket.destroy);
+      socket.addListener("timeout", socket.destroy);
+    }
+
+    // Sets up a timer to trigger a timeout event
+    function startTimer(socket) {
+      if (self._timeout) {
+        clearTimeout(self._timeout);
+      }
+      self._timeout = setTimeout(function () {
+        self.emit("timeout");
+        clearTimer();
+      }, msecs);
+      destroyOnTimeout(socket);
+    }
+
+    // Prevent a timeout from triggering
+    function clearTimer() {
+      clearTimeout(this._timeout);
+      if (callback) {
+        self.removeListener("timeout", callback);
+      }
+      if (!this.socket) {
+        self._currentRequest.removeListener("socket", startTimer);
+      }
+    }
+
+    // Start the timer when the socket is opened
     if (this.socket) {
-      startTimer(this, msecs);
+      startTimer(this.socket);
     }
     else {
-      var self = this;
-      this._currentRequest.once("socket", function () {
-        startTimer(self, msecs);
-      });
+      this._currentRequest.once("socket", startTimer);
     }
 
+    this.on("socket", destroyOnTimeout);
     this.once("response", clearTimer);
     this.once("error", clearTimer);
 
     return this;
   };
 
-  function startTimer(request, msecs) {
-    clearTimeout(request._timeout);
-    request._timeout = setTimeout(function () {
-      request.emit("timeout");
-    }, msecs);
-  }
-
-  function clearTimer() {
-    clearTimeout(this._timeout);
-  }
-
   // Proxy all other public ClientRequest methods
   [
-    "abort", "flushHeaders", "getHeader",
+    "flushHeaders", "getHeader",
     "setNoDelay", "setSocketKeepAlive",
   ].forEach(function (method) {
     RedirectableRequest.prototype[method] = function (a, b) {
@@ -1263,11 +1292,8 @@
 
     // Set up event handlers
     request._redirectable = this;
-    for (var event in eventHandlers) {
-      /* istanbul ignore else */
-      if (event) {
-        request.on(event, eventHandlers[event]);
-      }
+    for (var e = 0; e < events.length; e++) {
+      request.on(events[e], eventHandlers[events[e]]);
     }
 
     // End a redirected request
@@ -1325,9 +1351,7 @@
     if (location && this._options.followRedirects !== false &&
         statusCode >= 300 && statusCode < 400) {
       // Abort the current request
-      this._currentRequest.removeAllListeners();
-      this._currentRequest.on("error", noop);
-      this._currentRequest.abort();
+      abortRequest(this._currentRequest);
       // Discard the remainder of the response to avoid waiting for data
       response.destroy();
 
@@ -1519,11 +1543,19 @@
     return CustomError;
   }
 
+  function abortRequest(request) {
+    for (var e = 0; e < events.length; e++) {
+      request.removeListener(events[e], eventHandlers[events[e]]);
+    }
+    request.on("error", noop);
+    request.abort();
+  }
+
   // Exports
   followRedirects.exports = wrap({ http: http$1, https: https$1 });
   followRedirects.exports.wrap = wrap;
 
-  var _from = "axios";
+  var _from = "axios@latest";
   var _id = "axios@0.21.1";
   var _inBundle = false;
   var _integrity = "sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==";
@@ -1533,10 +1565,10 @@
   var _requested = {
   	type: "tag",
   	registry: true,
-  	raw: "axios",
+  	raw: "axios@latest",
   	name: "axios",
   	escapedName: "axios",
-  	rawSpec: "",
+  	rawSpec: "latest",
   	saveSpec: null,
   	fetchSpec: "latest"
   };
@@ -1546,7 +1578,7 @@
   ];
   var _resolved = "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz";
   var _shasum = "22563481962f4d6bde9a76d516ef0e5d3c09b2b8";
-  var _spec = "axios";
+  var _spec = "axios@latest";
   var _where = "D:\\Projects\\Business_Projects\\ucc-sdk";
   var author = {
   	name: "Matt Zabriskie"
